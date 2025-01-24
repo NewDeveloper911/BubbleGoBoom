@@ -5,9 +5,10 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Player movement")]
-    [Range(1.0f,50.0f)]
+    [Range(1.0f,400.0f)]
     [SerializeField] float playerSpeed;
     [SerializeField] float userRight, userForward;
+    [SerializeField] Rigidbody2D rb;
 
     [Header("Camera settings")]
     [SerializeField] Camera main_Camera;
@@ -24,8 +25,12 @@ public class PlayerMovement : MonoBehaviour
         //Get player movement
         userRight = Input.GetAxis("Horizontal");
         userForward = Input.GetAxis("Vertical");
+        
+    }
+
+    void FixedUpdate(){
         //Moving the player
-        transform.position += new Vector3(userRight*playerSpeed*Time.deltaTime, userForward*playerSpeed*Time.deltaTime,0);
+        rb.AddForce(new Vector2(userRight*playerSpeed*Time.deltaTime, userForward*playerSpeed*Time.deltaTime));
     }
 
     //Should handle collisions with enemy
