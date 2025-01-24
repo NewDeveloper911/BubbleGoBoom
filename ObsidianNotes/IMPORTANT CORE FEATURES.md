@@ -15,6 +15,18 @@ Art
 
 Sound
 - Music
+	- Main Menu / Intermission / Lobby
+	- Level 1
+		- Theme
+		- Boss
+	- Level 2
+		- Theme
+		- Boss
+	- Level 3
+		- Theme
+		- Boss
+	- Cutscene music? 1-2 trakcs
+	- Ending Song
 - Sound effects
 
 
