@@ -1,0 +1,291 @@
+{
+  "main": {
+    "id": "dd8e4900ea676744",
+    "type": "split",
+    "children": [
+      {
+        "id": "7f02abe5e133fdad",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e1d7e1e586ad6d03",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Welcome.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Welcome"
+            }
+          },
+          {
+            "id": "ae16472ac5746903",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Bubble Go Boom.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Bubble Go Boom"
+            }
+          },
+          {
+            "id": "bef472f0f564b0d4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Bubble Go Boom.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Bubble Go Boom"
+            }
+          },
+          {
+            "id": "afeea1807d696f25",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Enemies.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Enemies"
+            }
+          },
+          {
+            "id": "f0ad2c44a5578fa6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Buffs.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Buffs"
+            }
+          },
+          {
+            "id": "c426386ce83a73de",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Buffs.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Buffs"
+            }
+          },
+          {
+            "id": "36875aaeef29fc75",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "IMPORTANT CORE FEATURES.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "IMPORTANT CORE FEATURES"
+            }
+          },
+          {
+            "id": "d242fc35878b7677",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "IMPORTANT CORE FEATURES.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "IMPORTANT CORE FEATURES"
+            }
+          }
+        ],
+        "currentTab": 7
+      },
+      {
+        "id": "0c859213fabf4148",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d1f06176fe1a1533",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "de6da3972b00aa42",
+    "type": "split",
+    "children": [
+      {
+        "id": "eb7bd827a804adaa",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "562f55ef46406c29",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "e555f920890b26f3",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "8b40309351012340",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "0cf9b6c0b3b2de29",
+    "type": "split",
+    "children": [
+      {
+        "id": "925db00f8907e82c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "573bfb406fb024d6",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "IMPORTANT CORE FEATURES.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for IMPORTANT CORE FEATURES"
+            }
+          },
+          {
+            "id": "dc9760e11096f7e3",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "IMPORTANT CORE FEATURES.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from IMPORTANT CORE FEATURES"
+            }
+          },
+          {
+            "id": "8befd2605b577d24",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "c11c44e5aa0ef1a4",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "IMPORTANT CORE FEATURES.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of IMPORTANT CORE FEATURES"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "d242fc35878b7677",
+  "lastOpenFiles": [
+    "Ideas.md",
+    "Welcome.md",
+    "Player.md",
+    "Buffs.md",
+    "Enemies.md",
+    "Bubble Go Boom.md",
+    "Levels.md",
+    "IMPORTANT CORE FEATURES.md"
+  ]
+}
