@@ -27,7 +27,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float cameraSpeed, cameraParentSpeed;
     [SerializeField] Camera main_Camera;
     [SerializeField] int cameraWidth, cameraHeight;
-    [SerializeField] bool cameraOnScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -38,11 +37,11 @@ public class PlayerMovement : MonoBehaviour
                 The mouse position should directly move the camera object directly
         */
 
-
         main_Camera = FindObjectOfType<Camera>();
         main_Camera.transform.LookAt(rb.gameObject.transform);
         cameraHeight = main_Camera.scaledPixelHeight;
         cameraWidth = main_Camera.scaledPixelWidth;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     // Update is called once per frame
@@ -69,14 +68,6 @@ public class PlayerMovement : MonoBehaviour
         //Getting the mouse position for camera movement
         var mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPos.z = -1f; // zero z
-        cameraOnScreen = false;
-        if(mouseWorldPos.x > 0 && mouseWorldPos.x < cameraWidth){
-            if(mouseWorldPos.y > 0 && mouseWorldPos.y < cameraHeight){
-                //Then, the cursor is in view and then should be able to move the camera
-                //Basically locks the cursor on screen, i guess
-                cameraOnScreen = true;
-            }
-        }
 
         //Camera should stay away from the next room to hide the room
 
@@ -90,10 +81,10 @@ public class PlayerMovement : MonoBehaviour
         //With lerping
         //Added the if statement to try to prevent vertigo but still enable cursor movement
         //Should limit how far away the camera can move from the player
-        if(Vector3.Distance(main_Camera.transform.position, mouseWorldPos) > cursorDistance){
+        /*if(Vector3.Distance(main_Camera.transform.position, mouseWorldPos) > cursorDistance){
             newCameraTarget = mouseWorldPos;
-        }
-        main_Camera.transform.position = Vector3.Lerp(main_Camera.transform.position, newCameraTarget, cameraSpeed*Time.deltaTime);
+        }*/
+        main_Camera.transform.position = Vector3.Lerp(main_Camera.transform.position, mouseWorldPos, cameraSpeed*Time.deltaTime);
         
     }
 
@@ -107,7 +98,7 @@ public class PlayerMovement : MonoBehaviour
 
     //Should handle collisions with enemy
     /*
-        void OnCollisionEnter2D(Collider2D other){
+        void OnCollisionEnter2D(Collision2D other){
 
         }
     */
