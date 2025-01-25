@@ -24,6 +24,10 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Getting the mouse position for gun aiming
+        var mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorldPos.z = 0f; // zero z
+
         if(bulletTimer > 0) bulletTimer -= Time.deltaTime;
         //Checking if the user has attempted to fire
         if(Input.GetButtonDown("Fire1")){
