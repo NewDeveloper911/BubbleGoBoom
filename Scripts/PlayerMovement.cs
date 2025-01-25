@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Player movement")]
-    //[Range(1.0f,400.0f)]
+    [Range(1.0f,50.0f)]
     [SerializeField] float playerSpeed;
     [SerializeField] float userRight, userForward;
     [SerializeField] Rigidbody2D rb;
@@ -31,7 +31,6 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate(){
         //Moving the player
         rb.AddForce(new Vector2(userRight*playerSpeed*Time.deltaTime, userForward*playerSpeed*Time.deltaTime));
-        //
     }
 
     //Should handle collisions with enemy
