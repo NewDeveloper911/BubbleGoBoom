@@ -23,7 +23,6 @@ public class Gun : MonoBehaviour {
 	bool shooting, readyToShoot, reloading, BulletsLeftAreGreaterThanZero;
 	
 	public Transform attackPoint;
-	public LayerMask CanBeShot;
 	
 	//Graphics and visual effects
 	public GameObject muzzleFlash;
@@ -97,12 +96,13 @@ public class Gun : MonoBehaviour {
         var mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		
 		//Use a raycast to get location of bullet target
-		RaycastHit2D hit = Physics2D.Raycast(attackPoint.position + 0.2f*attackPoint.transform.right, mouseWorldPos, 40f);
+		RaycastHit2D hit = Physics2D.Raycast(attackPoint.position - 0.2f*attackPoint.transform.up, mouseWorldPos, 40f);
         if(hit && hit.collider.name != "Player"){
             //Checks if the ray hit something
             //Calculate direction from place of attack to targetpoint
             Vector3 targetPoint = new Vector3(hit.point.x, hit.point.y, 0f);
             Vector3 directionWithoutSpread = targetPoint - attackPoint.position;
+			Debug.DrawRay(attackPoint.position, directionWithoutSpread);
             
             //Calculate spread (for shotguns and those types of guns)
             float ySpread = Random.Range(-spread, spread);
@@ -111,16 +111,15 @@ public class Gun : MonoBehaviour {
             Vector3 directionWithSpread = directionWithoutSpread + new Vector3(0,ySpread,0);
             
             //Instantiate the bullet to be shot
-            GameObject curbullet = Instantiate(bullet, attackPoint.position + 0.2f*attackPoint.transform.right, attackPoint.rotation) as GameObject;
+            GameObject curbullet = Instantiate(bullet, attackPoint.position - 0.2f*attackPoint.transform.up, Quaternion.identity) as GameObject;
             
             //Rotates bullet to face direction of shooting
-            //curbullet.transform.forward = directionWithSpread.normalized;
+            curbullet.transform.right = directionWithSpread.normalized;
             
             //Actually shoots the object
-            curbullet.GetComponent<Rigidbody2D>().AddForce(directionWithSpread.normalized * shootForce, ForceMode2D.Impulse);
-            Debug.DrawRay(attackPoint.position, directionWithSpread.normalized, Color.cyan);
 			curbullet.GetComponent<Bullet>().targetEnemyMask = enemyMask;
 			curbullet.GetComponent<Bullet>().bulletDamage = bulletDamage;
+            curbullet.GetComponent<Rigidbody2D>().velocity = directionWithSpread.normalized * shootForce;
             
             //Instantiates a muzzle flash if it exists, after i shoot
             if (muzzleFlash != null)

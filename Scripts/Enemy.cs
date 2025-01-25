@@ -28,13 +28,11 @@ public class Enemy : MonoBehaviour
 
     [Header("Miscellaneous")]
     [SerializeField] bool isRanged;
-    [SerializeField] PolygonCollider2D enemyCollider;
     [SerializeField] LayerMask playerLayerMask;
 
     // Start is called before the first frame update
     void Start()
     {
-        enemyCollider = GetComponent<PolygonCollider2D>();
         currentHealth = maxhealth;
         attackTimer = attackCooldown;
     }

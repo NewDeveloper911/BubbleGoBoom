@@ -84,6 +84,9 @@ public class PlayerMovement : MonoBehaviour
 
         // Treat x and y values as cartesian coordinates
         float x = (mousePos.x - centerX) / (Screen.width / 2);
+        //Flipping the sprite to face the direction it's facing
+        if(x > 0) GetComponent<SpriteRenderer>().flipX = true;
+        else GetComponent<SpriteRenderer>().flipX = false;
         float y = (mousePos.y - centerY) / (Screen.height / 2);
 
         // Determine offse amount

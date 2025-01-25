@@ -24,6 +24,9 @@ public class HealthManager : MonoBehaviour
     void Start()
     {
         playerHealth = maxPlayerHealth;
+        //Setting the default value of the healthbar
+        healthBar.maxValue = maxPlayerHealth;
+        healthBar.value = maxPlayerHealth;
     }
 
     public void DamagePlayer(int damage){
@@ -39,6 +42,7 @@ public class HealthManager : MonoBehaviour
             amIDead = true;
             if(gameOverUI != null) gameOverUI.SetActive(true);
         }
+        healthBar.value = playerHealth;
     }
 
     public void HealPlayer(int manna){
@@ -47,6 +51,7 @@ public class HealthManager : MonoBehaviour
             if(playerHealth > (maxPlayerHealth / 5) && lowHealthUI.activeSelf){
                 //Turning off low health UI if they have enough
                 if(lowHealthUI != null) lowHealthUI.SetActive(false);
+                healthBar.value = playerHealth;
             }
             
         } 
