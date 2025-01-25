@@ -12,12 +12,14 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Camera settings")]
     [SerializeField] GameObject cameraParent;
+    [SerializeField] float cameraSpeed, cameraParentSpeed;
     [SerializeField] Camera main_Camera;
 
     // Start is called before the first frame update
     void Start()
     {
         main_Camera = FindObjectOfType<Camera>();
+        main_Camera.transform.LookAt(rb.gameObject.transform);
     }
 
     // Update is called once per frame
@@ -26,10 +28,10 @@ public class PlayerMovement : MonoBehaviour
         //Get player movement
         userRight = Input.GetAxis("Horizontal");
         userForward = Input.GetAxis("Vertical");
+
         //Getting the mouse position for camera movement
         var mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPos.z = -1f; // zero z
-
         /*
             Empty object is parent of camera
             Movement should move the empty object
@@ -41,9 +43,12 @@ public class PlayerMovement : MonoBehaviour
         //Moving the empty parent to follow the player's position
         Vector3 playerPos = rb.transform.position;
         playerPos.z = -1f;
-        //cameraParent.transform.position = Vector3.Lerp(cameraParent.transform.position, playerPos, 1.5f);
+        //Without lerping
+        //cameraParent.transform.position += (playerPos - cameraParent.transform.position)*Time.deltaTime*cameraParentSpeed;
+
         //Moving the camera towards the cursor
-        main_Camera.transform.position = Vector3.Lerp(main_Camera.transform.position, mouseWorldPos, 1.5f);
+        //Without lerping
+        //main_Camera.transform.position += (mouseWorldPos - main_Camera.transform.position)*Time.deltaTime/cameraSpeed;
     }
 
     void FixedUpdate(){
