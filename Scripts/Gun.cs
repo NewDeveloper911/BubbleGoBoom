@@ -13,8 +13,8 @@ public class Gun : MonoBehaviour
     [SerializeField] float bulletTimer; 
 
     [Header("Aiming, i guess")]
-    [SerializeField] Gameobject bulletPrefab;
-    [SerializeField] Transform playerTransform;
+    [SerializeField] GameObject bulletPrefab;
+    [SerializeField] Transform bulletSpawnpoint;
 
     void Start()
     {
@@ -29,7 +29,9 @@ public class Gun : MonoBehaviour
         if(Input.GetButtonDown("Fire1")){
             bulletTimer = 1.0f / bulletRate; //resetting the firing timer
             //Creating a bullet
-            Instantiate(bulletPrefab, playerTransform, Quaternion.identity);
+            Instantiate(bulletPrefab, bulletSpawnpoint.position, Quaternion.identity);
+            //Should calculate the direction in which the bullet should travel
+                //Or rather let the gun script handle that
         }
     }
 }
