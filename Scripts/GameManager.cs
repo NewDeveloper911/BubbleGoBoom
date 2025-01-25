@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     [Header("Managed scripts")]
     [SerializeField] HealthManager health;
     [SerializeField] AudioManager audioManager;
-    [SerializeField] AudioSource[] songs;
+    [SerializeField] AudioClip[] songs;
 
     [Header("Waves for basic jam")]
     [SerializeField] Transform[] spawnpoints;
@@ -27,9 +27,9 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if(waveTimer > 0) waveTimer -= Time.deltaTime; //resetting the timer
-        if(waveTimer == 0){
-            int randomSpawnIndex = Random.Range(1, spawnpoints.Length); //generating a random spawnpoint
-            int randomEnemyIndex = Random.Range(1, spawnableEnemies.Length); //generating a random spawnpoint
+        if(waveTimer <= 0){
+            int randomSpawnIndex = Random.Range(0, spawnpoints.Length); //generating a random spawnpoint
+            int randomEnemyIndex = Random.Range(0, spawnableEnemies.Length); //generating a random spawnpoint
             Vector3 enemySpawnPosition = spawnpoints[randomSpawnIndex].position;
 
             //Spawning the enemy at this position
