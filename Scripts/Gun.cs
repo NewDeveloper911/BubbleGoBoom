@@ -30,6 +30,9 @@ public class Gun : MonoBehaviour {
 	//public Animator GunAnimator //Might use if I want to play animations when firing and reloading
 	public Text bulletUIText;
 	public GameObject gunUI;
+	[SerializeField]
+	Transform playerTransform;
+	[SerializeField] [Range(0f,3f)] float armRadius, rotationSpeed;
 	
 	//This is used to fix bugs, which I will defintely need
 	public bool allowInvoke;
@@ -42,6 +45,19 @@ public class Gun : MonoBehaviour {
 	
 	void MyInput()
 	{
+		// Get mouse position in world space
+		Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		mousePos.z = 0;  // Ensure the z value is 0 since we're working in 2D
+
+		// Calculate direction from the player to the mouse
+		Vector3 directionToMouse = mousePos - playerTransform.position;
+
+		// Calculate the angle between the gun's current forward direction and the direction to the mouse
+		float angle = Vector3.SignedAngle(Vector3.up, directionToMouse, Vector3.forward);
+
+		// Apply the calculated rotation to the gun
+		transform.rotation = Quaternion.Euler(0, 0, angle+180);
+
 		//Check if I can hold fire button (not really for revolvers)
 		if (allowButtonHold) 
 		{
@@ -81,7 +97,7 @@ public class Gun : MonoBehaviour {
         var mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		
 		//Use a raycast to get location of bullet target
-		RaycastHit2D hit = Physics2D.Raycast(attackPoint.position + new Vector3(0.5f, 0f, 0f), mouseWorldPos, 40f);
+		RaycastHit2D hit = Physics2D.Raycast(attackPoint.position + 0.2f*attackPoint.transform.right, mouseWorldPos, 40f);
         if(hit && hit.collider.name != "Player"){
             //Checks if the ray hit something
             //Calculate direction from place of attack to targetpoint
@@ -95,7 +111,7 @@ public class Gun : MonoBehaviour {
             Vector3 directionWithSpread = directionWithoutSpread + new Vector3(0,ySpread,0);
             
             //Instantiate the bullet to be shot
-            GameObject curbullet = Instantiate(bullet, attackPoint.position, Quaternion.identity) as GameObject;
+            GameObject curbullet = Instantiate(bullet, attackPoint.position + 0.2f*attackPoint.transform.right, attackPoint.rotation) as GameObject;
             
             //Rotates bullet to face direction of shooting
             //curbullet.transform.forward = directionWithSpread.normalized;
