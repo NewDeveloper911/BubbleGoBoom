@@ -105,7 +105,7 @@ MonoBehaviour:
   bulletDamage: 10
   targetEnemyMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
 --- !u!50 &7695147432111005241
 Rigidbody2D:
   serializedVersion: 4
