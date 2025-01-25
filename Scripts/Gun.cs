@@ -5,7 +5,9 @@ using UnityEngine.UI;
 public class Gun : MonoBehaviour {
 	
 	//The bullet and its movement forces
+	[SerializeField] LayerMask enemyMask;
 	public GameObject bullet;
+	[SerializeField] int bulletDamage;
 	public float shootForce, upwardForce;
 	
 	//Gun stats
@@ -101,6 +103,8 @@ public class Gun : MonoBehaviour {
             //Actually shoots the object
             curbullet.GetComponent<Rigidbody2D>().AddForce(directionWithSpread.normalized * shootForce, ForceMode2D.Impulse);
             Debug.DrawRay(attackPoint.position, directionWithSpread.normalized, Color.cyan);
+			curbullet.GetComponent<Bullet>().targetEnemyMask = enemyMask;
+			curbullet.GetComponent<Bullet>().bulletDamage = bulletDamage;
             
             //Instantiates a muzzle flash if it exists, after i shoot
             if (muzzleFlash != null)
