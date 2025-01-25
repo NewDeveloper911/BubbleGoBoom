@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 984f17d40bf6a3b4fb37f481035831ba
+guid: e6c41fded20e58243bae7527f48c5487
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,54 +123,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Objects_0
+      name: Torches_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 43
-        width: 11
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1212cc675a19da142bb8349056a30db5
-      internalID: 630031863
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Objects_1
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 40
-        width: 22
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 007f884e7e37d8443beaefe857665330
-      internalID: 754910365
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Objects_2
-      rect:
-        serializedVersion: 2
-        x: 67
-        y: 38
-        width: 23
+        x: 102
+        y: 101
+        width: 20
         height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -179,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ab70b5989b7d0741b2cb65cb810c196
-      internalID: -845977122
+      spriteID: 80a3710ef83eba04cb9561647f243dd2
+      internalID: -4825684
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Objects_3
+      name: Torches_1
       rect:
         serializedVersion: 2
         x: 5
-        y: 4
-        width: 26
-        height: 24
+        y: 36
+        width: 20
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2fdb9d957eb96204fb9f9d53bef1b717
-      internalID: -215816043
+      spriteID: bd0ac521ee1dbfa418d214e739d209b5
+      internalID: 1763785247
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Objects_4
+      name: Torches_2
       rect:
         serializedVersion: 2
-        x: 36
-        y: 4
-        width: 24
-        height: 22
+        x: 131
+        y: 13
+        width: 4
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18733ef1e601e8e4ab119a42fd8a0778
-      internalID: 1560171334
+      spriteID: 6ff2e298f03ab0c4abe1ba69ea310fb6
+      internalID: 1544432373
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Objects_5
+      name: Torches_3
       rect:
         serializedVersion: 2
-        x: 67
-        y: 4
-        width: 24
-        height: 24
+        x: 153
+        y: 12
+        width: 5
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5f73b2b264329b428d23b5bc28c6795
-      internalID: 1762851656
+      spriteID: 6ab9b0ee37fd52a45ae57142f1070ef3
+      internalID: -85431373
       vertices: []
       indices: 
       edges: []
@@ -259,12 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Objects_0: 630031863
-      Objects_1: 754910365
-      Objects_2: -845977122
-      Objects_3: -215816043
-      Objects_4: 1560171334
-      Objects_5: 1762851656
+      Torches_0: -4825684
+      Torches_1: 1763785247
+      Torches_2: 1544432373
+      Torches_3: -85431373
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

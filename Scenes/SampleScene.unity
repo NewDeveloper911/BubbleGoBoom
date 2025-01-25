@@ -5921,7 +5921,7 @@ MonoBehaviour:
   damage: 70
   projectile: {fileID: 6017484412182822554, guid: 5d79d199276ed0f4faa37807f3bdf1fb, type: 3}
   directionsFired: 1
-  shootforce: 20
+  shootforce: 3
   maxhealth: 200
   currentHealth: 0
   isRanged: 1

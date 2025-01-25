@@ -106,7 +106,7 @@ MonoBehaviour:
   damage: 20
   projectile: {fileID: 0}
   directionsFired: 1
-  shootforce: 4.5
+  shootforce: 2
   maxhealth: 25
   currentHealth: 0
   isRanged: 0

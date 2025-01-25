@@ -77,8 +77,7 @@ public class Enemy : MonoBehaviour
                             //This should handle attacks of multiple bullets in directions at once
                             for(int i=1;i<directionsFired;i++){
                                 float angle = 360f / directionsFired * i;
-                                Vector3 direction = new Vector3(Mathf.Cos(Mathf.Deg2Rad * angle), Mathf.Sin(Mathf.Deg2Rad * angle), 0);
-                                Debug.Log(direction);
+                                Vector3 direction = new Vector3(Mathf.Cos(Mathf.Deg2Rad * angle), Mathf.Sin(Mathf.Deg2Rad * angle), 0);;
                                  //Instantiate the bullet and force of it
                                 GameObject curBullet = Instantiate(projectile, transform.position, Quaternion.identity);
                 
