@@ -37,11 +37,12 @@ public class HealthManager : MonoBehaviour
                 if(lowHealthUI != null) lowHealthUI.SetActive(true);
             }
         } 
-        else{
+        if(playerHealth <= 0){
             //They have run out of health and should be dead
             amIDead = true;
             if(gameOverUI != null) gameOverUI.SetActive(true);
         }
+        
         healthBar.value = playerHealth;
     }
 

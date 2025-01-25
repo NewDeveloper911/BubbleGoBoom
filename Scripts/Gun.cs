@@ -102,7 +102,7 @@ public class Gun : MonoBehaviour {
             //Calculate direction from place of attack to targetpoint
             Vector3 targetPoint = new Vector3(hit.point.x, hit.point.y, 0f);
             Vector3 directionWithoutSpread = targetPoint - attackPoint.position;
-			Debug.DrawRay(attackPoint.position, directionWithoutSpread);
+			Debug.DrawRay(attackPoint.position, directionWithoutSpread, Color.blue, 4f);
             
             //Calculate spread (for shotguns and those types of guns)
             float ySpread = Random.Range(-spread, spread);
@@ -114,7 +114,7 @@ public class Gun : MonoBehaviour {
             GameObject curbullet = Instantiate(bullet, attackPoint.position - 0.2f*attackPoint.transform.up, Quaternion.identity) as GameObject;
             
             //Rotates bullet to face direction of shooting
-            curbullet.transform.right = directionWithSpread.normalized;
+            curbullet.transform.up = directionWithSpread.normalized;
             
             //Actually shoots the object
 			curbullet.GetComponent<Bullet>().targetEnemyMask = enemyMask;

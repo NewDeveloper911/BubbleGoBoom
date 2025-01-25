@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Player movement")]
-    [Range(1.0f,50.0f)]
+    [Range(1.0f,100.0f)]
     [SerializeField] float playerSpeed;
     float userRight, userForward;
     [SerializeField] Rigidbody2D rb;

@@ -10,7 +10,6 @@ public class Bullet : MonoBehaviour
     [SerializeField] float bulletLifeTime;
     [SerializeField] HealthManager health;
     [SerializeField] float lifeRemaining;
-    [Range(1,10)]
     public int bulletDamage;
     public LayerMask targetEnemyMask;
 
@@ -29,22 +28,20 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other){
         if(other.gameObject.layer == targetEnemyMask){
-           
             //Need to get their relevant script and damage them
-            try{
-                 //We hit what we wanted to so let's damage them
+            var enemy = other.gameObject.GetComponent<Enemy>();
+            if(enemy != null){
+                //We hit what we wanted to so let's damage them
                 Debug.Log("We shot someone, yay!");
                 //if they are an enemy, then let's damage them as one
-                other.gameObject.GetComponent<Enemy>().Damage(bulletDamage);
+                enemy.Damage(bulletDamage);
             }
-            catch (Exception)
-            {
+            else{
                 //else, they should be a player, so make them pay
+                Debug.Log("Enemy is shooting us rn fr");
                 health.DamagePlayer(bulletDamage);
             }
-            
         }
-        
         Destroy(gameObject);
     }
 }

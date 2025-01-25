@@ -99,10 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea89b691ce921a4ca566ffc70b3d00b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletLifeTime: 2.1
+  bulletLifeTime: 3
   health: {fileID: 0}
   lifeRemaining: 0
-  bulletDamage: 1
+  bulletDamage: 4
   targetEnemyMask:
     serializedVersion: 2
     m_Bits: 256
