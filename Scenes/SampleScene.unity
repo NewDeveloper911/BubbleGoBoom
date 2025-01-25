@@ -410,10 +410,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpeed: 25
   rb: {fileID: 994731193}
+  isDashing: 0
+  dashPower: 3
+  dashCooldown: 2.26
+  dashTimer: 0
+  projectileToAvoid:
+    serializedVersion: 2
+    m_Bits: 0
   cameraParent: {fileID: 506928289}
+  cursorDistance: 2
+  newCameraTarget: {x: 0, y: 0, z: 0}
   cameraSpeed: 2
   cameraParentSpeed: 5
   main_Camera: {fileID: 519420031}
+  cameraWidth: 0
+  cameraHeight: 0
 --- !u!212 &994731190
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -455,7 +466,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8bf3e9779f90caa4898cffb238eb5b03, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -476,8 +487,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -542,7 +553,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &1175808421
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,13 +21,24 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Camera settings")]
     [SerializeField] GameObject cameraParent;
+    [Range(1f, 20f)]
+    [SerializeField] float cursorDistance;
+    [SerializeField] Vector3 newCameraTarget;
     [SerializeField] float cameraSpeed, cameraParentSpeed;
     [SerializeField] Camera main_Camera;
     [SerializeField] int cameraWidth, cameraHeight;
+    [SerializeField] bool cameraOnScreen;
 
     // Start is called before the first frame update
     void Start()
     {
+        /*
+            Empty object is parent of camera
+            Movement should move the empty object
+                The mouse position should directly move the camera object directly
+        */
+
+
         main_Camera = FindObjectOfType<Camera>();
         main_Camera.transform.LookAt(rb.gameObject.transform);
         cameraHeight = main_Camera.scaledPixelHeight;
@@ -42,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         userForward = Input.GetAxis("Vertical");
 
         //Implement player dash
-        if(Input.GetButtonDown("Space") && dashTimer > 0){
+        if(Input.GetButtonDown("Jump") && dashTimer > 0){
             //We need to get a cooldown and a layer for projectiles
                 //Shouldn't avoid damage from projectiles if dashing
             isDashing = true;
@@ -58,15 +69,16 @@ public class PlayerMovement : MonoBehaviour
         //Getting the mouse position for camera movement
         var mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPos.z = -1f; // zero z
-        /*
-            Empty object is parent of camera
-            Movement should move the empty object
-                The mouse position should directly move the camera object directly
-        */
+        cameraOnScreen = false;
+        if(mouseWorldPos.x > 0 && mouseWorldPos.x < cameraWidth){
+            if(mouseWorldPos.y > 0 && mouseWorldPos.y < cameraHeight){
+                //Then, the cursor is in view and then should be able to move the camera
+                //Basically locks the cursor on screen, i guess
+                cameraOnScreen = true;
+            }
+        }
 
         //Camera should stay away from the next room to hide the room
-
-        //Should limit how far away the camera can move from the player
 
         //Moving the empty parent to follow the player's position
         Vector3 playerPos = rb.transform.position;
@@ -76,7 +88,13 @@ public class PlayerMovement : MonoBehaviour
 
         //Moving the camera towards the cursor
         //With lerping
-        main_Camera.transform.position = Vector3.Lerp(main_Camera.transform.position, mouseWorldPos, cameraSpeed*Time.deltaTime);
+        //Added the if statement to try to prevent vertigo but still enable cursor movement
+        //Should limit how far away the camera can move from the player
+        if(Vector3.Distance(main_Camera.transform.position, mouseWorldPos) > cursorDistance){
+            newCameraTarget = mouseWorldPos;
+        }
+        main_Camera.transform.position = Vector3.Lerp(main_Camera.transform.position, newCameraTarget, cameraSpeed*Time.deltaTime);
+        
     }
 
     void FixedUpdate(){
@@ -88,7 +106,10 @@ public class PlayerMovement : MonoBehaviour
     }
 
     //Should handle collisions with enemy
-    void onCollisionEnter(){
+    /*
+        void OnCollisionEnter2D(Collider2D other){
 
-    }
+        }
+    */
+    
 }
