@@ -10,7 +10,7 @@ public class DiddysScript : MonoBehaviour
     bool picked_up = false;
     [SerializeField] GameObject player;
     void OnTriggerEnter2D(Collider2D other){
-        if (other == player.GetComponent<Collider2D>()){
+        if (other.CompareTag("Player")){
             picked_up = true;
             print("in");
             player.GetComponent<PlayerMovement>().playerSpeed *= 2;
@@ -18,7 +18,7 @@ public class DiddysScript : MonoBehaviour
             }
     }
 
-    void FixedUpdate(){
+    void Update(){
         if (picked_up){
             timer += Time.deltaTime;
             if (timer> speedDuration){

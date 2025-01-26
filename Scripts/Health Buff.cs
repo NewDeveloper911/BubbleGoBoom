@@ -6,10 +6,14 @@ using UnityEngine;
 public class HealthBuff : MonoBehaviour
 {
     [SerializeField] HealthManager healthManager;
-    [SerializeField] Collider2D player;
     [SerializeField] int healAmount = 5;
+
+
+
     void OnTriggerEnter2D(Collider2D other){
-        if (other == player){
+        if (other.CompareTag("Player")){
+            Debug.Log("Should be trying to heal now");
+            healthManager = FindObjectOfType<HealthManager>();
             healthManager.HealPlayer(healAmount);
         }
     }

@@ -10,15 +10,15 @@ public class SpeedBuff : MonoBehaviour
     bool picked_up = false;
     [SerializeField] GameObject player;
     void OnTriggerEnter2D(Collider2D other){
-        if (other == player.GetComponent<Collider2D>()){
+        if (other.CompareTag("Player")){
             picked_up = true;
             print("in");
-            player.GetComponent<PlayerMovement>().playerSpeed *= 2;
-            this.GetComponent<Transform>().position = new Vector3(0,1000,0);
+            FindObjectOfType<PlayerMovement>().playerSpeed *= 2;
+            GetComponent<Transform>().position = new Vector3(0,1000,0);
             }
     }
 
-    void FixedUpdate(){
+    void Update(){
         if (picked_up){
             timer += Time.deltaTime;
             if (timer> speedDuration){
