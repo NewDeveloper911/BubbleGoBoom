@@ -126,12 +126,12 @@ TextureImporter:
       name: Map Sheet_0
       rect:
         serializedVersion: 2
-        x: 36
-        y: 532
+        x: 4
+        y: 916
         width: 7
         height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -147,12 +147,12 @@ TextureImporter:
       name: Map Sheet_1
       rect:
         serializedVersion: 2
-        x: 44
-        y: 532
+        x: 12
+        y: 916
         width: 7
         height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -168,12 +168,12 @@ TextureImporter:
       name: Map Sheet_2
       rect:
         serializedVersion: 2
-        x: 52
-        y: 532
+        x: 20
+        y: 916
         width: 7
         height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -189,12 +189,12 @@ TextureImporter:
       name: Map Sheet_3
       rect:
         serializedVersion: 2
-        x: 64
-        y: 416
+        x: 32
+        y: 800
         width: 160
         height: 160
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -210,12 +210,12 @@ TextureImporter:
       name: Map Sheet_4
       rect:
         serializedVersion: 2
-        x: 288
-        y: 480
+        x: 256
+        y: 832
         width: 224
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -231,12 +231,12 @@ TextureImporter:
       name: Map Sheet_5
       rect:
         serializedVersion: 2
-        x: 608
-        y: 352
-        width: 224
-        height: 192
+        x: 4
+        y: 908
+        width: 7
+        height: 7
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -252,12 +252,12 @@ TextureImporter:
       name: Map Sheet_6
       rect:
         serializedVersion: 2
-        x: 36
-        y: 524
+        x: 12
+        y: 908
         width: 7
         height: 7
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -273,12 +273,12 @@ TextureImporter:
       name: Map Sheet_7
       rect:
         serializedVersion: 2
-        x: 44
-        y: 524
+        x: 20
+        y: 908
         width: 7
         height: 7
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -294,12 +294,12 @@ TextureImporter:
       name: Map Sheet_8
       rect:
         serializedVersion: 2
-        x: 52
-        y: 524
+        x: 4
+        y: 900
         width: 7
         height: 7
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -315,12 +315,12 @@ TextureImporter:
       name: Map Sheet_9
       rect:
         serializedVersion: 2
-        x: 36
-        y: 516
+        x: 12
+        y: 900
         width: 7
         height: 7
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -336,12 +336,12 @@ TextureImporter:
       name: Map Sheet_10
       rect:
         serializedVersion: 2
-        x: 44
-        y: 516
+        x: 20
+        y: 900
         width: 7
         height: 7
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -357,12 +357,12 @@ TextureImporter:
       name: Map Sheet_11
       rect:
         serializedVersion: 2
-        x: 52
-        y: 516
-        width: 7
-        height: 7
+        x: 32
+        y: 448
+        width: 352
+        height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -378,12 +378,12 @@ TextureImporter:
       name: Map Sheet_12
       rect:
         serializedVersion: 2
-        x: 325
-        y: 417
-        width: 22
-        height: 23
+        x: 480
+        y: 575
+        width: 353
+        height: 162
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -396,36 +396,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ate_Closed
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 416
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 16, z: 0, w: 16}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 34d0fd33f449212469a7e0cd4b1998ad
-      internalID: -663938766
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Map Sheet_14
       rect:
         serializedVersion: 2
-        x: 325
-        y: 385
+        x: 483
+        y: 520
         width: 22
-        height: 23
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -441,12 +420,12 @@ TextureImporter:
       name: Map Sheet_15
       rect:
         serializedVersion: 2
-        x: 410
-        y: 384
-        width: 12
-        height: 32
+        x: 515
+        y: 518
+        width: 23
+        height: 21
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -462,12 +441,12 @@ TextureImporter:
       name: Map Sheet_16
       rect:
         serializedVersion: 2
-        x: 448
-        y: 320
-        width: 96
-        height: 96
+        x: 608
+        y: 352
+        width: 224
+        height: 192
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -483,12 +462,12 @@ TextureImporter:
       name: Map Sheet_17
       rect:
         serializedVersion: 2
-        x: 96
-        y: 32
-        width: 352
-        height: 320
+        x: 453
+        y: 484
+        width: 26
+        height: 24
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -504,12 +483,12 @@ TextureImporter:
       name: Map Sheet_18
       rect:
         serializedVersion: 2
-        x: 576
-        y: 192
-        width: 128
-        height: 96
+        x: 484
+        y: 484
+        width: 24
+        height: 22
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -522,12 +501,138 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gate_Closed
+      name: Map Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 523
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd826d5bf7dacd444839066633e471fe
+      internalID: 1811208228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Map Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 484
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeb83628bbbcbbd4e8a1c296fbd4d7e3
+      internalID: -254292956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Map Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 417
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 329469ed845616049ba67d85567e204a
+      internalID: 1985124823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Map Sheet_21
       rect:
         serializedVersion: 2
         x: 352
         y: 384
         width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 668dc4e30fd6a8b41b2d2fb01c7bd225
+      internalID: -2020329526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Map Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 352
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11b5e002e5b479f44b4c07e83e68efcb
+      internalID: -625141356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Map Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 385
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 095a856e02697424a958dbc97b9ebeaa
+      internalID: -92561771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Map Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 384
+        width: 12
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -536,8 +641,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8da8dd5123aa7664783a0cf2bd47a288
-      internalID: -1747341990
+      spriteID: dc6062844b84bcb40afa0239b87b43ae
+      internalID: -249638194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Map Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 320
+        width: 128
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6706ccf686702ee4b97aec3064321e3d
+      internalID: -757652857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Map Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 160
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1b74f4162eb24a47b79086876fe72fb
+      internalID: 440435213
       vertices: []
       indices: 
       edges: []
@@ -553,18 +700,26 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Gate_Closed: -1747341990
       Map Sheet_0: 1769214409
       Map Sheet_1: 473191227
       Map Sheet_10: -1002700551
       Map Sheet_11: 531897162
       Map Sheet_12: 674431786
+      Map Sheet_13: 1811208228
       Map Sheet_14: -986694344
       Map Sheet_15: 1508418380
       Map Sheet_16: -1261711677
       Map Sheet_17: 1047644867
       Map Sheet_18: -1025587534
+      Map Sheet_19: -254292956
       Map Sheet_2: 982225585
+      Map Sheet_20: 1985124823
+      Map Sheet_21: -2020329526
+      Map Sheet_22: -625141356
+      Map Sheet_23: -92561771
+      Map Sheet_24: -249638194
+      Map Sheet_25: -757652857
+      Map Sheet_26: 440435213
       Map Sheet_3: -1253832682
       Map Sheet_4: 1314083902
       Map Sheet_5: 1328404632
@@ -572,7 +727,6 @@ TextureImporter:
       Map Sheet_7: -1566905241
       Map Sheet_8: 1656320116
       Map Sheet_9: -361916348
-      ate_Closed: -663938766
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
