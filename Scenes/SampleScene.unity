@@ -6339,6 +6339,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1006211355}
   - component: {fileID: 1006211354}
+  - component: {fileID: 1006211356}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -6364,14 +6365,14 @@ MonoBehaviour:
   songs:
   - {fileID: 8300000, guid: e4b3396569cf12d42a38193012c1b3c1, type: 3}
   - {fileID: 8300000, guid: d46de2f4306ffc54caf5ba21b445a6d6, type: 3}
-  player: {fileID: 994731191}
-  minDist: 10
-  maxDist: 20
-  spawnBoundBox: {fileID: 534721735}
-  Suicider: {fileID: 1219663299493455685, guid: f9fb68a7dcc7d0c4897538492a05f0f7, type: 3}
-  RegularGoon: {fileID: 8570769535621865027, guid: efbdd00ffb4fac5498de74ffe2ac5929, type: 3}
-  Shooter: {fileID: 524241779885945310, guid: 37d58b61c8bd962489be29c69b22f8a4, type: 3}
-  Mitosis: {fileID: 892023101224603755, guid: 2a66203c90dd6b44aa4edddea534d709, type: 3}
+  player: {fileID: 0}
+  minDist: 0
+  maxDist: 0
+  spawnBoundBox: {fileID: 0}
+  Suicider: {fileID: 0}
+  RegularGoon: {fileID: 0}
+  Shooter: {fileID: 0}
+  Mitosis: {fileID: 0}
   waveCooldown: 30
   waveTimer: 0
   scoreText: {fileID: 811583182}
@@ -6390,6 +6391,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1006211356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1006211353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e8a240fced88194eab258057885411a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemsToDrop:
+  - {fileID: 0}
+  - {fileID: 0}
+  pickUpRates:
+  - 0.4
+  - 1
 --- !u!1 &1076508891
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ public class EnemyHealth : MonoBehaviour
     [Header("Fields here cos im lazy to test")]
     [SerializeField] Boolean isSuicider;
     [SerializeField] GameObject suicider;
+    [SerializeField] ItemDrop itemSpawner;
 
 
     Coroutine changeColorCoroutine;
@@ -37,13 +38,14 @@ public class EnemyHealth : MonoBehaviour
             Application.Quit();
         }
 
+        itemSpawner = FindObjectOfType<ItemDrop>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(itemSpawner == null) itemSpawner = FindObjectOfType<ItemDrop>();
     }
 
     public void Damage(float damage){
@@ -59,6 +61,10 @@ public class EnemyHealth : MonoBehaviour
     void Death(){
 
         gameManager.ChangeScore(scoreValue);
+        //Here, we can spawn an item and decide which one that is
+        GameObject itemToSpawn = itemSpawner.dropItem();
+        //Need to instantiate this item where the enemy was
+        Instantiate(itemToSpawn, transform.position, Quaternion.identity);
 
         Destroy(gameObject);
 
