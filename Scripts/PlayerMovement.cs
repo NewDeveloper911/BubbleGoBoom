@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Player movement")]
     [Range(1.0f,100.0f)]
-    [SerializeField] float playerSpeed;
+    public float playerSpeed;
     float userRight, userForward;
     [SerializeField] Rigidbody2D rb;
 
