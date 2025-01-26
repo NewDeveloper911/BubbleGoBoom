@@ -6,6 +6,8 @@ public class Gun : MonoBehaviour {
 	
 	//The bullet and its movement forces
 	[SerializeField] LayerMask enemyMask;
+	[SerializeField] AudioSource bangSound;
+	[SerializeField] AudioClip bangClip;
 	public GameObject bullet;
 	[SerializeField] int bulletDamage;
 	public float shootForce, upwardForce;
@@ -109,6 +111,9 @@ public class Gun : MonoBehaviour {
 			curbullet.GetComponent<Bullet>().targetEnemyMask = enemyMask;
 			curbullet.GetComponent<Bullet>().bulletDamage = bulletDamage;
             curbullet.GetComponent<Rigidbody2D>().velocity = -attackPoint.transform.up * shootForce;
+
+			//Sound the gun
+			bangSound.PlayOneShot(bangClip);
             
             bulletsLeft--; // Used to decrement values
             bulletShot++;

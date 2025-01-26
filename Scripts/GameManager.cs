@@ -109,8 +109,21 @@ public class GameManager : MonoBehaviour
             }
         } else if(isBoss == true){
             Debug.Log("Spawning boss");
-            Vector2 randomPosition = new Vector2(player.position.x + UnityEngine.Random.Range(minDist, maxDist), player.position.y + UnityEngine.Random.Range(minDist, maxDist));
-            Instantiate(KingOlay, randomPosition, Quaternion.identity);
+            int attempts = 0;
+            Vector2 randomPosition = Vector2.zero;
+            bool validSpawn = false;
+            while(!validSpawn && attempts < 1000){
+                attempts++;
+                randomPosition = new Vector2(player.position.x + UnityEngine.Random.Range(minDist, maxDist), player.position.y + UnityEngine.Random.Range(minDist, maxDist));
+                if(spawnBoundBox.OverlapPoint(randomPosition)){
+                    validSpawn = true;
+                }
+            }
+            if(!validSpawn){
+                Debug.LogError("Couldn't find a valid position to spawn the boss in the alloted number of attempts");
+            } else {
+                Instantiate(KingOlay, randomPosition, Quaternion.identity);
+            }
         }
     }
 
