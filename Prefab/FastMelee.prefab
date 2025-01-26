@@ -107,7 +107,7 @@ MonoBehaviour:
   projectile: {fileID: 0}
   directionsFired: 1
   shootforce: 2
-  maxhealth: 25
+  maxhealth: 30
   currentHealth: 0
   isRanged: 0
   playerLayerMask:
