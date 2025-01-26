@@ -10,15 +10,17 @@ public class PlayerMovement : MonoBehaviour
     public float playerSpeed;
     float userRight, userForward;
     [SerializeField] Rigidbody2D rb;
+    Animator anim;
+    //bool running = false;
 
-    [Header("Dashing mechanic")]
+    /* [Header("Dashing mechanic")]
     [SerializeField] bool isDashing;
     [SerializeField] float dashPower;
     Vector3 dashForce;
     [Range(1f,5f)]
     [SerializeField] float dashCooldown;
     [SerializeField] float dashTimer;
-    [SerializeField] LayerMask projectileToAvoid; //all projectiles should be of this layermask - check in onCollisionEnter()
+    [SerializeField] LayerMask projectileToAvoid; */ //all projectiles should be of this layermask - check in onCollisionEnter()
 
     [Header("Camera settings")]
 
@@ -40,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
             Movement should move the empty object
                 The mouse position should directly move the camera object directly
         */
+        anim = GetComponent<Animator>();
 
         main_Camera = FindObjectOfType<Camera>();
         main_Camera.transform.LookAt(rb.gameObject.transform);
@@ -56,9 +59,10 @@ public class PlayerMovement : MonoBehaviour
         //Get player movement
         userRight = Input.GetAxis("Horizontal");
         userForward = Input.GetAxis("Vertical");
+        anim.SetBool("run", (userRight!=0||userForward!=0));
 
         //Implement player dash
-        if(Input.GetButtonDown("Jump") && dashTimer > 0){
+      /*   if(Input.GetButtonDown("Jump") && dashTimer > 0){
             //We need to get a cooldown and a layer for projectiles
                 //Shouldn't avoid damage from projectiles if dashing
             isDashing = true;
@@ -69,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
             //resets the cooldown when not dashing
             dashTimer = dashCooldown;
             isDashing = false;
-        } 
+        }  */
 
          // Get mouse position in world space
 
@@ -112,9 +116,9 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate(){
         //Moving the player
         rb.velocity = new Vector2(userRight*playerSpeed, userForward*playerSpeed);
-        if(isDashing){
+        /* if(isDashing){
             rb.velocity = dashForce;
-        }
+        } */
     }
 
     //Should handle collisions with enemy
