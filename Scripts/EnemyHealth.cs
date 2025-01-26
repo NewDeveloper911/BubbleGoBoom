@@ -27,7 +27,6 @@ public class EnemyHealth : MonoBehaviour
     //0.2f chance we don't drop anything
     [SerializeField] float[] pickUpRates = {0.96f, 1.0f};
 
-
     GameObject dropItem(){
         float dropRate = UnityEngine.Random.Range(0.0f,1.0f);
         if(dropRate <= 0.9f) return null;
