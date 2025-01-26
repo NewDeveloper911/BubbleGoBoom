@@ -44,8 +44,6 @@ public class PlayerHealthManager : MonoBehaviour
 
 
     public void Reset(){
-        lowHealthUI.SetActive(false);
-        gameOverUI.SetActive(false);
         health = maxHealth;
         healthBar.value = healthBar.maxValue;
         isDead = false;
@@ -57,6 +55,7 @@ public class PlayerHealthManager : MonoBehaviour
 
         if(damageRoutine != null) StopCoroutine(damageRoutine);
         damageRoutine = StartCoroutine(ChangeColor());
+        healthBar.value = health;
 
         if(health <= 0){
             isDead = true;

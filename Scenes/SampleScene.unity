@@ -5812,6 +5812,27 @@ MonoBehaviour:
   healthBar: {fileID: 148048044}
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   noDamageColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!95 &994731197
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489942363}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bf0c0af2ab227e742a52da2cb307d5c1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1053395595 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8634646918249666968, guid: 4b66c3ebcd906b548a1812def19e4e0a, type: 3}
@@ -6805,6 +6826,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2725186231334598276, guid: 4b66c3ebcd906b548a1812def19e4e0a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 994731196}
+    - targetCorrespondingSourceObject: {fileID: 2725186231334598276, guid: 4b66c3ebcd906b548a1812def19e4e0a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 994731197}
     - targetCorrespondingSourceObject: {fileID: 8634646918249666968, guid: 4b66c3ebcd906b548a1812def19e4e0a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1053395599}
