@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class ShootingPattern_RegularGoon : MonoBehaviour
 {
-    [SerializeField] int amount = 1;
-    [SerializeField] float speed = 10f;
+    [SerializeField] int amount;
+    [SerializeField] float speed;
+    [SerializeField] float cooldown;
     EnemyShooting enemyShooting;
 
     // Start is called before the first frame update
@@ -18,7 +19,7 @@ public class ShootingPattern_RegularGoon : MonoBehaviour
             Application.Quit();
         }
 
-        InvokeRepeating("Shoot", 0f, 0.1f);
+        InvokeRepeating("Shoot", 0f, cooldown);
     }
 
     // Update is called once per frame

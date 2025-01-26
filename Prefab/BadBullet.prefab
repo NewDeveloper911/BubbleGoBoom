@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 6017484412182822554}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.9540066, y: 0.15679179, z: 0}
+  m_LocalPosition: {x: -0.9540066, y: 0.15679179, z: 1}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea89b691ce921a4ca566ffc70b3d00b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletLifeTime: 2.59
+  bulletLifeTime: 10
   health: {fileID: 0}
   lifeRemaining: 0
   damagesEnemies: 0

@@ -7,7 +7,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [Header("Bullet details")]
-    [Range(1f, 3f)]
+    [Range(1f, 10f)]
     [SerializeField] float bulletLifeTime;
     [SerializeField] HealthManager health;
     [SerializeField] float lifeRemaining;
@@ -32,12 +32,16 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter2D(Collider2D victim) {
 
         if (victim.CompareTag("Enemy") && damagesEnemies) {
-            Debug.Log("Hit an enemy");
             Destroy(gameObject);
-
             EnemyHealth healthScript = victim.GetComponent<EnemyHealth>();
             healthScript.Damage(bulletDamage);
         } 
+
+        if(victim.CompareTag("Player") && !damagesEnemies) {
+            Destroy(gameObject);
+            PlayerHealthManager healthScript = victim.GetComponent<PlayerHealthManager>();
+            healthScript.Damage(bulletDamage);
+        }
     }
 
     
