@@ -16,8 +16,30 @@ public class EnemyHealth : MonoBehaviour
     [Header("Fields here cos im lazy to test")]
     [SerializeField] Boolean isSuicider;
     [SerializeField] GameObject suicider;
-    [SerializeField] ItemDrop itemSpawner;
+    [SerializeField] GameObject[] itemsToDrop;
+    //Need to get the spawn rates of these items
+        //Current items - soap item and baby oil
 
+        //using cumulative frequencies here
+    [SerializeField] float[] pickUpRates = {0.4f, 1.0f};
+
+
+    GameObject dropItem(){
+        //Will need to generate a random number
+        int randomItemIndex = UnityEngine.Random.Range(0, itemsToDrop.Length);
+        float dropRate = UnityEngine.Random.Range(0.0f,1.0f);
+
+        for(int i=0; i<pickUpRates.Length; i++){
+            //Keep going up until we find the first probability greater than our value
+            if(pickUpRates[i] <= dropRate){
+                //Then this is the item which we shall return to be dropped
+                return itemsToDrop[i];
+            }
+        }
+
+        //Returns something if the for loop fails
+        return itemsToDrop[0];
+    }
 
     Coroutine changeColorCoroutine;
     GameManager gameManager;
@@ -38,15 +60,8 @@ public class EnemyHealth : MonoBehaviour
             Application.Quit();
         }
 
-        itemSpawner = FindObjectOfType<ItemDrop>();
-
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(itemSpawner == null) itemSpawner = FindObjectOfType<ItemDrop>();
-    }
 
     public void Damage(float damage){
         health -= damage;
@@ -62,7 +77,7 @@ public class EnemyHealth : MonoBehaviour
 
         gameManager.ChangeScore(scoreValue);
         //Here, we can spawn an item and decide which one that is
-        GameObject itemToSpawn = itemSpawner.dropItem();
+        GameObject itemToSpawn = dropItem();
         //Need to instantiate this item where the enemy was
         Instantiate(itemToSpawn, transform.position, Quaternion.identity);
 

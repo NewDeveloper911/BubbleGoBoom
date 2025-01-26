@@ -136,6 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   collisionDamage: 0
+  damageCooldown: 1
 --- !u!114 &734374794459249763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,3 +155,9 @@ MonoBehaviour:
   noDamageColor: {r: 1, g: 1, b: 1, a: 1}
   isSuicider: 0
   suicider: {fileID: 1219663299493455685}
+  itemsToDrop:
+  - {fileID: 2422075502075839743, guid: c145706d07f10da4ebf545112ea0bb62, type: 3}
+  - {fileID: 5428697101560538437, guid: 3cb13eb26dde5444f8a7dbccf15f53f0, type: 3}
+  pickUpRates:
+  - 0.4
+  - 1
