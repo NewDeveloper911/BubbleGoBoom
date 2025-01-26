@@ -45,8 +45,13 @@ public class PlayerHealthManager : MonoBehaviour
 
     public void Reset(){
         health = maxHealth;
+        healthBar = FindObjectOfType<Slider>();
         healthBar.value = healthBar.maxValue;
         isDead = false;
+    }
+
+    public void SetHealth(){
+        healthBar.value = health;
     }
 
 
@@ -55,7 +60,6 @@ public class PlayerHealthManager : MonoBehaviour
 
         if(damageRoutine != null) StopCoroutine(damageRoutine);
         damageRoutine = StartCoroutine(ChangeColor());
-        healthBar.value = health;
 
         if(health <= 0){
             isDead = true;
@@ -82,6 +86,7 @@ public class PlayerHealthManager : MonoBehaviour
         health += amount;
         // healthBar.value = health;
         Math.Clamp(health, 0, maxHealth);
+        healthBar.value = health;
     }
 
     IEnumerator ChangeColor(){

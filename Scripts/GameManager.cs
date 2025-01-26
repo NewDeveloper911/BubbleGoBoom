@@ -131,6 +131,11 @@ public class GameManager : MonoBehaviour
         scoreText.text = "Score: " + gameScore.ToString();
     }
 
+    public void StartGoCoroutine(){
+        StartCoroutine(SpawnWave());
+    }
+
+
     void EndGame(){
         // Debug.Log("You lost the game bro, fr");
         scoreText.text = "Final score: " + gameScore.ToString();

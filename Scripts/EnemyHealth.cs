@@ -25,7 +25,7 @@ public class EnemyHealth : MonoBehaviour
         //using cumulative frequencies here
     
     //0.2f chance we don't drop anything
-    [SerializeField] float[] pickUpRates = {0.99f, 1.0f};
+    [SerializeField] float[] pickUpRates = {0.96f, 1.0f};
 
 
     GameObject dropItem(){
@@ -33,7 +33,7 @@ public class EnemyHealth : MonoBehaviour
         int randomItemIndex = UnityEngine.Random.Range(0, itemsToDrop.Length);
         float dropRate = UnityEngine.Random.Range(0.0f,1.0f);
 
-        if(dropRate <= 0.97f) return null;
+        if(dropRate <= 0.9f) return null;
 
         for(int i=0; i<pickUpRates.Length; i++){
             //Keep going up until we find the first probability greater than our value
@@ -99,8 +99,7 @@ public class EnemyHealth : MonoBehaviour
         }
 
         if(gameObject.name.Contains("KingOlaf")){
-            Debug.Log("You won the game!");
-            StartCoroutine(gameManager.SpawnWave());
+            gameManager.StartGoCoroutine();
         }
     }
 
