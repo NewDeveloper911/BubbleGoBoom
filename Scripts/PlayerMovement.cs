@@ -122,8 +122,6 @@ public class PlayerMovement : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other){
         if(other.collider.tag == "Enemy"){
             //Should take damage if making contact with enemies
-            FindObjectOfType<HealthManager>().DamagePlayer(other.gameObject.GetComponent<Enemy>().damage);
-            Debug.Log("Hit an enemy accidentally");
         }
     }
     

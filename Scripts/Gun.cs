@@ -85,7 +85,6 @@ public class Gun : MonoBehaviour {
 		{
 			bulletShot = 0;
 			Shoot();
-			Debug.Log("I have shot a bullet. What is happening?");
 		}
 	}
 	

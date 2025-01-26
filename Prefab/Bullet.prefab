@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3526395490845926828}
   - component: {fileID: 7695147432111005241}
   - component: {fileID: 6128668788496884890}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,10 +102,11 @@ MonoBehaviour:
   bulletLifeTime: 3
   health: {fileID: 0}
   lifeRemaining: 0
+  damagesEnemies: 1
   bulletDamage: 4
   targetEnemyMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
 --- !u!50 &7695147432111005241
 Rigidbody2D:
   serializedVersion: 4
@@ -162,7 +163,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

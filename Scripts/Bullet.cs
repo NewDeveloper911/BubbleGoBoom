@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -10,6 +11,8 @@ public class Bullet : MonoBehaviour
     [SerializeField] float bulletLifeTime;
     [SerializeField] HealthManager health;
     [SerializeField] float lifeRemaining;
+
+    [SerializeField] bool damagesEnemies;
     public int bulletDamage;
     public LayerMask targetEnemyMask;
 
@@ -26,22 +29,16 @@ public class Bullet : MonoBehaviour
         if(lifeRemaining <= 0) Destroy(gameObject);
     }
 
-    void OnCollisionEnter2D(Collision2D other){
-        if(((1 << other.gameObject.layer) & targetEnemyMask) != 0){
-            //Need to get their relevant script and damage them
-            var enemy = other.gameObject.GetComponent<Enemy>();
-            if(enemy != null){
-                //We hit what we wanted to so let's damage them
-                Debug.Log("We shot someone, yay!");
-                //if they are an enemy, then let's damage them as one
-                enemy.Damage(bulletDamage);
-            }
-            else{
-                //else, they should be a player, so make them pay
-                Debug.Log("Enemy is shooting us rn fr");
-                health.DamagePlayer(bulletDamage);
-            }
-        }
-        Destroy(gameObject);
+    void OnTriggerEnter2D(Collider2D victim) {
+
+        if (victim.CompareTag("Enemy") && damagesEnemies) {
+            Debug.Log("Hit an enemy");
+            Destroy(gameObject);
+
+            EnemyHealth healthScript = victim.GetComponent<EnemyHealth>();
+            healthScript.Damage(bulletDamage);
+        } 
     }
+
+    
 }

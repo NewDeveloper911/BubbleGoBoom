@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3526395490845926828}
   - component: {fileID: 7695147432111005241}
   - component: {fileID: 8933443210105136633}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: BadBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ac47017be927f80429be801fa08c2436, type: 3}
-  m_Color: {r: 0.5887015, g: 0.9716981, b: 0.53626734, a: 1}
+  m_Color: {r: 1, g: 0.14010851, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -102,10 +102,11 @@ MonoBehaviour:
   bulletLifeTime: 2.59
   health: {fileID: 0}
   lifeRemaining: 0
+  damagesEnemies: 0
   bulletDamage: 10
   targetEnemyMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!50 &7695147432111005241
 Rigidbody2D:
   serializedVersion: 4
@@ -162,7 +163,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
