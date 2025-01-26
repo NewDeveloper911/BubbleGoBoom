@@ -41,7 +41,11 @@ public class Enemy : MonoBehaviour
 
     public void Damage(int bulletDamage){
         currentHealth -= bulletDamage;
-        if(currentHealth < 0) Destroy(gameObject);
+        if(currentHealth <= 0){
+            //Update the gameManager score
+            FindObjectOfType<GameManager>().gameScore += maxhealth;
+            Destroy(gameObject); 
+        } 
     }
 
     // Update is called once per frame

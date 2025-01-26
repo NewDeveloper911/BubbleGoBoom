@@ -102,32 +102,14 @@ public class Gun : MonoBehaviour {
             //Calculate direction from place of attack to targetpoint
             Vector3 targetPoint = new Vector3(hit.point.x, hit.point.y, 0f);
             Vector3 directionWithoutSpread = targetPoint - attackPoint.position;
-			Debug.DrawRay(attackPoint.position, directionWithoutSpread, Color.blue, 4f);
-            
-            //Calculate spread (for shotguns and those types of guns)
-            float ySpread = Random.Range(-spread, spread);
-            
-            //Calculates direction with spread
-            Vector3 directionWithSpread = directionWithoutSpread + new Vector3(0,ySpread,0);
             
             //Instantiate the bullet to be shot
             GameObject curbullet = Instantiate(bullet, attackPoint.position - 0.2f*attackPoint.transform.up, Quaternion.identity) as GameObject;
             
-            //Rotates bullet to face direction of shooting
-            curbullet.transform.up = directionWithSpread.normalized;
-            
             //Actually shoots the object
 			curbullet.GetComponent<Bullet>().targetEnemyMask = enemyMask;
 			curbullet.GetComponent<Bullet>().bulletDamage = bulletDamage;
-            curbullet.GetComponent<Rigidbody2D>().velocity = directionWithSpread.normalized * shootForce;
-            
-            //Instantiates a muzzle flash if it exists, after i shoot
-            if (muzzleFlash != null)
-            {
-                GameObject muzflash = Instantiate(muzzleFlash, attackPoint.position, Quaternion.FromToRotation(attackPoint.position, directionWithSpread.normalized)) as GameObject;
-                Destroy(curbullet, TimeBetweenShots);
-                Destroy(muzflash, TimeBetweenShots);
-            }
+            curbullet.GetComponent<Rigidbody2D>().velocity = -attackPoint.transform.up * shootForce;
             
             bulletsLeft--; // Used to decrement values
             bulletShot++;

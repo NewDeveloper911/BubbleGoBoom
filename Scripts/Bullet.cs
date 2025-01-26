@@ -28,7 +28,6 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other){
         if(((1 << other.gameObject.layer) & targetEnemyMask) != 0){
-            Debug.Log(other.collider.name);
             //Need to get their relevant script and damage them
             var enemy = other.gameObject.GetComponent<Enemy>();
             if(enemy != null){

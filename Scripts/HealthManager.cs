@@ -18,7 +18,12 @@ public class HealthManager : MonoBehaviour
     [Header("Miscellaneous")]
     public bool amIDead;
 
-
+    public void ResetGame(){
+        lowHealthUI.SetActive(false);
+        gameOverUI.SetActive(false);
+        playerHealth = maxPlayerHealth;
+        healthBar.value = healthBar.maxValue;
+    }
 
     // Start is called before the first frame update
     void Start()
