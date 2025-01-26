@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8633716014036879836}
   - component: {fileID: 2627808720416650603}
   - component: {fileID: 1757098062676636121}
+  - component: {fileID: 841855980172292522}
   m_Layer: 0
   m_Name: KingOlaf
   m_TagString: Enemy
@@ -145,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 639b8db0541aa014abf00e117c666e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5000
+  health: 50
   scoreValue: 1000
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   noDamageColor: {r: 1, g: 1, b: 1, a: 1}
@@ -169,8 +170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c4f13bd71bad6f49bad6929ec868aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  collisionDamage: 0
+  speed: 0.1
+  collisionDamage: 50
   damageCooldown: 1
 --- !u!114 &1757098062676636121
 MonoBehaviour:
@@ -184,3 +185,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac0e1d371d16204e9efacee232a6dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &841855980172292522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3476647635555288741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb2d2c51010e424198e21ef4212c729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6017484412182822554, guid: 5d79d199276ed0f4faa37807f3bdf1fb, type: 3}

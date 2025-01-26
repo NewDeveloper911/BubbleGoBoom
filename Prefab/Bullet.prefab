@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea89b691ce921a4ca566ffc70b3d00b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletLifeTime: 3
+  bulletLifeTime: 1
   health: {fileID: 0}
   lifeRemaining: 0
   damagesEnemies: 1

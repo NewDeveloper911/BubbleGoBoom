@@ -89,6 +89,11 @@ public class EnemyHealth : MonoBehaviour
                 Instantiate(suicider, transform.position + new Vector3(UnityEngine.Random.Range(-2f, 2f), UnityEngine.Random.Range(-2f, 2f), 0), transform.rotation);
             }
         }
+
+        if(gameObject.name.Contains("KingOlaf")){
+            Debug.Log("You won the game!");
+            StartCoroutine(gameManager.SpawnWave());
+        }
     }
 
     IEnumerator ChangeColor(){

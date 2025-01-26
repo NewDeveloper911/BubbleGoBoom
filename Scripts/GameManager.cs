@@ -32,15 +32,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject RegularGoon;
     [SerializeField] GameObject Shooter;
     [SerializeField] GameObject Mitosis;
+    [SerializeField] GameObject KingOlay;
 
 
 
-    [Header("Wave Settings")]
-    [SerializeField] float waveCooldown;
-    [SerializeField] float waveTimer;
 
     [Header("General UI")]
     [SerializeField] TMP_Text scoreText;
+
+    public int waves = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -48,21 +48,30 @@ public class GameManager : MonoBehaviour
         health = FindObjectOfType<HealthManager>();
         audioManager = FindObjectOfType<AudioManager>();
         scoreText = FindObjectOfType<TMP_Text>();
+
+        waves = 23;
+        StartCoroutine(SpawnWave());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(waveTimer > 0) waveTimer -= Time.deltaTime; //resetting the timer
-        if(waveTimer <= 0){
-            SpawnEmenies(10);
-            waveTimer = waveCooldown;
+    public IEnumerator SpawnWave(){
+        waves++;
+        if(waves % 24 == 0) {
+            BossWave();
+        }else{
+        int noOfEnemies = Mathf.RoundToInt(4 * Mathf.Log10(waves + 8));
+        SpawnEmenies(noOfEnemies, waves);
+        yield return new WaitForSeconds(10f);
+        StartCoroutine(SpawnWave());
         }
-        if(health.amIDead) EndGame();
-
     }
 
-    void SpawnEmenies(int number){
+    void BossWave(){
+        SpawnEmenies(1, waves, true);
+    }
+    // Update is called once per frame
+
+    void SpawnEmenies(int number, int waves, bool isBoss = false){
+        if(isBoss == false){
         int spawned = 0;
         int attempts = 0;
 
@@ -97,6 +106,11 @@ public class GameManager : MonoBehaviour
             }
             if(attempts > 1000) break;
 
+            }
+        } else if(isBoss == true){
+            Debug.Log("Spawning boss");
+            Vector2 randomPosition = new Vector2(player.position.x + UnityEngine.Random.Range(minDist, maxDist), player.position.y + UnityEngine.Random.Range(minDist, maxDist));
+            Instantiate(KingOlay, randomPosition, Quaternion.identity);
         }
     }
 
