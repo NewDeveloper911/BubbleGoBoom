@@ -151,6 +151,11 @@ public class GameManager : MonoBehaviour
 
     public void ResetGame(){
         gameoverUI.SetActive(false);
+        //Should reset the health as well
+        var healthMan = FindObjectOfType<PlayerHealthManager>();
+        healthMan.Heal(500);
+        healthMan.SetHealth();
+        
         gameScore = 0;
         //Destroying all livin enemies
         var enemies = FindObjectsByType<EnemyHealth>(FindObjectsSortMode.None);
@@ -158,6 +163,7 @@ public class GameManager : MonoBehaviour
             Destroy(enemy.gameObject);
         }
         StopAllCoroutines();
+        waves = 0;
         StartGoCoroutine();
 
     }

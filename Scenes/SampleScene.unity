@@ -1518,7 +1518,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Time survived
+  m_text: 'Waves survived:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1545,7 +1545,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 69.95
+  m_fontSize: 59.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2393,8 +2393,7 @@ MonoBehaviour:
   Mitosis: {fileID: 892023101224603755, guid: 2a66203c90dd6b44aa4edddea534d709, type: 3}
   KingOlay: {fileID: 3476647635555288741, guid: 2631440485b29994183435b5dc958d54, type: 3}
   scoreText: {fileID: 811583182}
-  timeSurive: {fileID: 1374308225}
-  timer: {fileID: 5019638680970349311}
+  wavesSurived: {fileID: 1374308225}
   gameoverUI: {fileID: 1452944358}
   waves: 0
 --- !u!4 &4727704236970251344
@@ -2481,6 +2480,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpeed: 5
   rb: {fileID: 3601301787312122025}
+  isDashing: 0
+  dashPower: 3
+  dashCooldown: 2
+  dashTimer: 0
+  projectileToAvoid:
+    serializedVersion: 2
+    m_Bits: 64
   cursorDistance: 1
   maxCursorDistance: 11.24
   screenPercentage: 0.4

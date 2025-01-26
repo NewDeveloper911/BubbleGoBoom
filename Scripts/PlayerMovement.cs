@@ -13,14 +13,14 @@ public class PlayerMovement : MonoBehaviour
     Animator anim;
     //bool running = false;
 
-    /* [Header("Dashing mechanic")]
-    [SerializeField] bool isDashing;
+    [Header("Dashing mechanic")]
+    [SerializeField] bool isDashing = false;
     [SerializeField] float dashPower;
     Vector3 dashForce;
     [Range(1f,5f)]
     [SerializeField] float dashCooldown;
     [SerializeField] float dashTimer;
-    [SerializeField] LayerMask projectileToAvoid; */ //all projectiles should be of this layermask - check in onCollisionEnter()
+    [SerializeField] LayerMask projectileToAvoid; //all projectiles should be of this layermask - check in onCollisionEnter()
 
     [Header("Camera settings")]
 
@@ -51,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
         cameraWidth = cameraHeight * Camera.main.aspect;   // Total width of the camera's view based on the aspect ratio
 
         Cursor.lockState = CursorLockMode.Confined;
+        dashTimer = dashCooldown;
     }
 
     // Update is called once per frame
@@ -60,24 +61,17 @@ public class PlayerMovement : MonoBehaviour
         userRight = Input.GetAxis("Horizontal");
         userForward = Input.GetAxis("Vertical");
         anim.SetBool("run", (userRight!=0||userForward!=0));
+        if(dashTimer > 0) dashTimer -= Time.deltaTime;
 
         //Implement player dash
-      /*   if(Input.GetButtonDown("Jump") && dashTimer > 0){
+       if(Input.GetButtonDown("Jump") && dashTimer <= 0){
             //We need to get a cooldown and a layer for projectiles
                 //Shouldn't avoid damage from projectiles if dashing
             isDashing = true;
             dashForce = rb.velocity * dashPower;
-            dashTimer -= Time.deltaTime;
-        }
-        else {
-            //resets the cooldown when not dashing
             dashTimer = dashCooldown;
-            isDashing = false;
-        }  */
-
-         // Get mouse position in world space
-
-
+        }
+        
         // Calculate new camera target position
         Vector3 playerTransform = gameObject.transform.position;
 
@@ -115,11 +109,10 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate(){
         //Moving the player
-        rb.velocity = new Vector2(userRight*playerSpeed, userForward*playerSpeed);
-        /* if(isDashing){
+        if(isDashing){
             rb.velocity = dashForce;
-        } */
-    }
-
-    
+            isDashing = false;
+        }
+        else rb.velocity = new Vector2(userRight*playerSpeed, userForward*playerSpeed);
+    } 
 }
