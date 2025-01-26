@@ -6658,10 +6658,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5916329704494562122, guid: 4b66c3ebcd906b548a1812def19e4e0a, type: 3}
-      propertyPath: playerSpeed
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6741,9 +6737,9 @@ MonoBehaviour:
   RegularGoon: {fileID: 8570769535621865027, guid: efbdd00ffb4fac5498de74ffe2ac5929, type: 3}
   Shooter: {fileID: 524241779885945310, guid: 37d58b61c8bd962489be29c69b22f8a4, type: 3}
   Mitosis: {fileID: 892023101224603755, guid: 2a66203c90dd6b44aa4edddea534d709, type: 3}
-  waveCooldown: 30
-  waveTimer: 0
+  KingOlay: {fileID: 0}
   scoreText: {fileID: 811583182}
+  waves: 0
 --- !u!1 &5019638680970349310
 GameObject:
   m_ObjectHideFlags: 0
