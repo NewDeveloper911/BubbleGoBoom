@@ -63,6 +63,7 @@ public class PlayerHealthManager : MonoBehaviour
 
         if(health <= 0){
             isDead = true;
+            //FindObjectOfType<GameManager>().EndGame();
         }
         UIChecks();
     }

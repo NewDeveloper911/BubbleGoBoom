@@ -5,7 +5,7 @@ public class Enemy2 : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField] float speed;
-    [SerializeField] int collisionDamage;
+    public int collisionDamage;
     [SerializeField] float damageCooldown = 1.0f;  // Cooldown time in seconds
 
     private Transform player;

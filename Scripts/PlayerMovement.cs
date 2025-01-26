@@ -121,13 +121,5 @@ public class PlayerMovement : MonoBehaviour
         } */
     }
 
-    //Should handle collisions with enemy
-    
-    void OnCollisionEnter2D(Collision2D other){
-        if(other.collider.tag == "Enemy"){
-            //Should take damage if making contact with enemies
-        }
-    }
-    
     
 }

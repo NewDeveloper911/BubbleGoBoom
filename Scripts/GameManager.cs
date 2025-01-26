@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
     public int gameScore = 1;
 
     [Header("Managed scripts")]
-    [SerializeField] HealthManager health;
     [SerializeField] AudioManager audioManager;
     [SerializeField] AudioClip[] songs;
 
@@ -39,23 +38,26 @@ public class GameManager : MonoBehaviour
 
 
     [Header("General UI")]
-    [SerializeField] TMP_Text scoreText;
+    [SerializeField] TMP_Text scoreText, timeSurive;
+    [SerializeField] Timer timer;
+    [SerializeField] GameObject gameoverUI;
 
     public int waves = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        health = FindObjectOfType<HealthManager>();
         audioManager = FindObjectOfType<AudioManager>();
-        scoreText = FindObjectOfType<TMP_Text>();
+        gameoverUI.SetActive(false);
+        
 
-        waves = 23;
+        waves = 0;
         StartCoroutine(SpawnWave());
     }
 
     void Update(){
-        if(Input.GetKeyDown(KeyCode.Escape)) SceneManager.LoadScene(0);
+        if(Input.GetKeyDown(KeyCode.T)) SceneManager.LoadScene(0);
+        timeSurive.text = "Time survived: " + timer.time.ToString();
     }
 
     public IEnumerator SpawnWave(){
@@ -141,14 +143,15 @@ public class GameManager : MonoBehaviour
     }
 
 
-    void EndGame(){
+    public void EndGame(){
         // Debug.Log("You lost the game bro, fr");
+        gameoverUI.SetActive(true);
         scoreText.text = "Final score: " + gameScore.ToString();
         Invoke("ResetGame", 5f); //reset the game after 5 second if there isn't any user input, i guess
     }
 
     public void ResetGame(){
-        health.ResetGame();
+        gameObject.SetActive(false);
         gameScore = 0;
     }
 

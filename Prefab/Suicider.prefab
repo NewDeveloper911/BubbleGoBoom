@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  collisionDamage: 0
+  collisionDamage: 10
   damageCooldown: 1
 --- !u!114 &734374794459249763
 MonoBehaviour:
