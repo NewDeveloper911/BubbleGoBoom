@@ -4,7 +4,8 @@ using System.Collections;
 public class AudioManager : MonoBehaviour {
 
 	public AudioSource musicSource;
-	public AudioClip songToPlay;
+	[SerializeField] AudioClip[] songsToPlay;
+	[SerializeField] int currentSong = 0;
 	private static AudioManager instance = null;
 	
 	public static AudioManager Instance
@@ -30,6 +31,12 @@ public class AudioManager : MonoBehaviour {
 		//muscSource is now set and available to other audio-based scripts
 		
 		musicSource.Play();
+	}
+
+	void Update(){
+		if(!musicSource.isPlaying){
+			ChooseSong(songsToPlay[++currentSong % songsToPlay.Length]);
+		}
 	}
 	
 	public void Pause()

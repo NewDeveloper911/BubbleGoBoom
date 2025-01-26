@@ -17,17 +17,23 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] Boolean isSuicider;
     [SerializeField] GameObject suicider;
     [SerializeField] GameObject[] itemsToDrop;
+    [SerializeField] AudioSource musicPlayer;
+    [SerializeField] AudioClip deathSound;
     //Need to get the spawn rates of these items
         //Current items - soap item and baby oil
 
         //using cumulative frequencies here
-    [SerializeField] float[] pickUpRates = {0.4f, 1.0f};
+    
+    //0.2f chance we don't drop anything
+    [SerializeField] float[] pickUpRates = {0.99f, 1.0f};
 
 
     GameObject dropItem(){
         //Will need to generate a random number
         int randomItemIndex = UnityEngine.Random.Range(0, itemsToDrop.Length);
         float dropRate = UnityEngine.Random.Range(0.0f,1.0f);
+
+        if(dropRate <= 0.97f) return null;
 
         for(int i=0; i<pickUpRates.Length; i++){
             //Keep going up until we find the first probability greater than our value
@@ -79,8 +85,10 @@ public class EnemyHealth : MonoBehaviour
         //Here, we can spawn an item and decide which one that is
         GameObject itemToSpawn = dropItem();
         //Need to instantiate this item where the enemy was
-        Instantiate(itemToSpawn, transform.position, Quaternion.identity);
+        if(itemToSpawn != null) Instantiate(itemToSpawn, transform.position, Quaternion.identity);
 
+        //playing the death sound
+        musicPlayer.PlayOneShot(deathSound);
         Destroy(gameObject);
 
         if(isSuicider){
