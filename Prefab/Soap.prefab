@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1019698565674214144}
   - component: {fileID: 7629976939681152287}
   - component: {fileID: -292793004076029418}
+  - component: {fileID: 190013636819326251}
   m_Layer: 0
   m_Name: Soap
   m_TagString: Untagged
@@ -50,6 +51,7 @@ MonoBehaviour:
   speedDuration: 10
   timer: 0
   speedIncrease: 1
+  maxSpeed: 10
   player: {fileID: 0}
 --- !u!212 &1019698565674214144
 SpriteRenderer:
@@ -162,3 +164,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthManager: {fileID: 0}
   healAmount: 5
+--- !u!95 &190013636819326251
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5428697101560538437}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 56b27f6ec2f0c4d43bf068021de07cd0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

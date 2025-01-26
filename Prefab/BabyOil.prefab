@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7580154125499605025}
   - component: {fileID: 3076668385326193800}
   - component: {fileID: 3260111977794000139}
+  - component: {fileID: 524721789510597628}
   m_Layer: 0
   m_Name: BabyOil
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.160196, y: 2.1843777, z: -71.43682}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -146,4 +147,26 @@ MonoBehaviour:
   speedDuration: 10
   timer: 0
   speedIncrease: 1.3
+  maxSpeed: 10
   player: {fileID: 2725186231334598276, guid: 4b66c3ebcd906b548a1812def19e4e0a, type: 3}
+--- !u!95 &524721789510597628
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2422075502075839743}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 56b27f6ec2f0c4d43bf068021de07cd0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
