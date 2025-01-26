@@ -38,8 +38,7 @@ public class GameManager : MonoBehaviour
 
 
     [Header("General UI")]
-    [SerializeField] TMP_Text scoreText, timeSurive;
-    [SerializeField] Timer timer;
+    [SerializeField] TMP_Text scoreText, wavesSurived;
     [SerializeField] GameObject gameoverUI;
 
     public int waves = 0;
@@ -57,7 +56,6 @@ public class GameManager : MonoBehaviour
 
     void Update(){
         if(Input.GetKeyDown(KeyCode.T)) SceneManager.LoadScene(0);
-        timeSurive.text = "Time survived: " + timer.time.ToString();
     }
 
     public IEnumerator SpawnWave(){
@@ -136,6 +134,7 @@ public class GameManager : MonoBehaviour
 
     void LateUpdate(){
         scoreText.text = "Score: " + gameScore.ToString();
+        wavesSurived.text = "Waves survived: " + waves.ToString();
     }
 
     public void StartGoCoroutine(){
@@ -151,8 +150,16 @@ public class GameManager : MonoBehaviour
     }
 
     public void ResetGame(){
-        gameObject.SetActive(false);
+        gameoverUI.SetActive(false);
         gameScore = 0;
+        //Destroying all livin enemies
+        var enemies = FindObjectsByType<EnemyHealth>(FindObjectsSortMode.None);
+        foreach(var enemy in enemies){
+            Destroy(enemy.gameObject);
+        }
+        StopAllCoroutines();
+        StartGoCoroutine();
+
     }
 
     public void ChangeScore(int amount){

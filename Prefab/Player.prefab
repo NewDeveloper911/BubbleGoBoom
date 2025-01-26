@@ -462,6 +462,8 @@ MonoBehaviour:
   enemyMask:
     serializedVersion: 2
     m_Bits: 128
+  bangSound: {fileID: 0}
+  bangClip: {fileID: 0}
   bullet: {fileID: 6017484412182822554, guid: f3edfe317cf0bcf43a1d761130280eca, type: 3}
   bulletDamage: 10
   shootForce: 30

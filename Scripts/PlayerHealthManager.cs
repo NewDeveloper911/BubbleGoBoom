@@ -45,7 +45,6 @@ public class PlayerHealthManager : MonoBehaviour
 
     public void Reset(){
         health = maxHealth;
-        healthBar = FindObjectOfType<Slider>();
         healthBar.value = healthBar.maxValue;
         isDead = false;
     }
@@ -63,7 +62,7 @@ public class PlayerHealthManager : MonoBehaviour
 
         if(health <= 0){
             isDead = true;
-            //FindObjectOfType<GameManager>().EndGame();
+            FindObjectOfType<GameManager>().EndGame();
         }
         UIChecks();
     }

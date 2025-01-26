@@ -29,10 +29,7 @@ public class EnemyHealth : MonoBehaviour
 
 
     GameObject dropItem(){
-        //Will need to generate a random number
-        int randomItemIndex = UnityEngine.Random.Range(0, itemsToDrop.Length);
         float dropRate = UnityEngine.Random.Range(0.0f,1.0f);
-
         if(dropRate <= 0.9f) return null;
 
         for(int i=0; i<pickUpRates.Length; i++){
@@ -85,12 +82,11 @@ public class EnemyHealth : MonoBehaviour
         //Here, we can spawn an item and decide which one that is
         GameObject itemToSpawn = dropItem();
         //Need to instantiate this item where the enemy was
-        if(itemToSpawn != null) Instantiate(itemToSpawn, transform.position, Quaternion.identity);
+        if(itemToSpawn != null) Instantiate(itemToSpawn, transform.position, transform.rotation);
 
         //playing the death sound
         musicPlayer.PlayOneShot(deathSound);
-        Destroy(gameObject);
-
+        
         if(isSuicider){
             int maxAmount = 8;
             for(int i = 0; i < UnityEngine.Random.Range(1, maxAmount + 1); i++){
@@ -101,6 +97,8 @@ public class EnemyHealth : MonoBehaviour
         if(gameObject.name.Contains("KingOlaf")){
             gameManager.StartGoCoroutine();
         }
+
+        Destroy(gameObject);
     }
 
     IEnumerator ChangeColor(){
