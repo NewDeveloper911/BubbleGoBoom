@@ -7,13 +7,15 @@ public class SpeedBuff : MonoBehaviour
 {
     [SerializeField] float speedDuration = 10f;
     [SerializeField] float timer =0f;
+    [Range(1f, 2f)]
+    [SerializeField] float speedIncrease;
     bool picked_up = false;
     [SerializeField] GameObject player;
     void OnTriggerEnter2D(Collider2D other){
         if (other.CompareTag("Player")){
             picked_up = true;
             print("in");
-            FindObjectOfType<PlayerMovement>().playerSpeed *= 2;
+            FindObjectOfType<PlayerMovement>().playerSpeed *= speedIncrease;
             GetComponent<Transform>().position = new Vector3(0,1000,0);
             }
     }

@@ -166,8 +166,8 @@ MonoBehaviour:
   isSuicider: 1
   suicider: {fileID: 1219663299493455685, guid: f9fb68a7dcc7d0c4897538492a05f0f7, type: 3}
   itemsToDrop:
-  - {fileID: 2422075502075839743, guid: c145706d07f10da4ebf545112ea0bb62, type: 3}
   - {fileID: 5428697101560538437, guid: 3cb13eb26dde5444f8a7dbccf15f53f0, type: 3}
+  - {fileID: 2422075502075839743, guid: c145706d07f10da4ebf545112ea0bb62, type: 3}
   pickUpRates:
   - 0.4
   - 1

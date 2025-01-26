@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedDuration: 10
   timer: 0
+  speedIncrease: 1
   player: {fileID: 0}
 --- !u!212 &1019698565674214144
 SpriteRenderer:
@@ -161,4 +162,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedDuration: 10
   timer: 0
+  speedIncrease: 1.3
   player: {fileID: 2725186231334598276, guid: 4b66c3ebcd906b548a1812def19e4e0a, type: 3}

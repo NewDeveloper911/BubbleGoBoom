@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour
         }
 
         // Load the main game scene
-        SceneManager.LoadScene("af"); // Make sure "MainScene" matches your scene name
+        SceneManager.LoadScene("SampleScene"); // Make sure "MainScene" matches your scene name
     }
 
     
