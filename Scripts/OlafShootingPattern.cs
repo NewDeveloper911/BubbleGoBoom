@@ -7,6 +7,8 @@ public class OlafShootingPattern : MonoBehaviour
 {
 
     EnemyShooting enemyShooting;
+    [Range(1f, 10f)]
+    [SerializeField] float bulletSpeedMultiplier;
 
     // Start is called before the first frame update
     void Start()
@@ -17,10 +19,7 @@ public class OlafShootingPattern : MonoBehaviour
             Application.Quit();
         }
 
-
         StartAttackPattern();
-
-
     }
 
 
@@ -67,7 +66,7 @@ public class OlafShootingPattern : MonoBehaviour
 
         float increment = 20f;
         for(int i = 0; i < bullets; i++){
-            enemyShooting.Shoot(5, 2f, initialAngle + (increment * i));
+            enemyShooting.Shoot(5, 2f*bulletSpeedMultiplier, initialAngle + (increment * i));
             yield return new WaitForSeconds(0.3f);
         }
     }
@@ -78,7 +77,7 @@ public class OlafShootingPattern : MonoBehaviour
 
         float increment =4f;
         for(int i = 0; i < bullets; i++){
-            enemyShooting.Shoot(4, 2f, initialAngle + (increment * i));
+            enemyShooting.Shoot(4, 2f * bulletSpeedMultiplier, initialAngle + (increment * i));
             yield return new WaitForSeconds(0.1f);
         }    
     }
@@ -90,7 +89,7 @@ public class OlafShootingPattern : MonoBehaviour
 
         float increment = 35f;
         for(int i = 0; i < bullets; i++){
-            enemyShooting.Shoot(1, 8f, initialAngle + (increment * i));
+            enemyShooting.Shoot(1, 8f * bulletSpeedMultiplier, initialAngle + (increment * i));
             yield return new WaitForSeconds(0.1f);
         }
     }
@@ -102,9 +101,9 @@ public class OlafShootingPattern : MonoBehaviour
 
         float increment = 13f;
         for(int i = 0; i < bullets; i+= 2){
-            enemyShooting.Shoot(8, 1f, initialAngle + (increment * i));
+            enemyShooting.Shoot(8, 1f * bulletSpeedMultiplier, initialAngle + (increment * i));
             yield return new WaitForSeconds(0.5f);
-            enemyShooting.Shoot(8, 4f, initialAngle + (increment * i));
+            enemyShooting.Shoot(8, 4f * bulletSpeedMultiplier, initialAngle + (increment * i));
             yield return new WaitForSeconds(0.5f);
         }
     }

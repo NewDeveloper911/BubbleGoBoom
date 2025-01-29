@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthManager: {fileID: 0}
-  healAmount: 5
+  healAmount: 10
 --- !u!95 &190013636819326251
 Animator:
   serializedVersion: 5

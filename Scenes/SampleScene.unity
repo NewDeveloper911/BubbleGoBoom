@@ -384,7 +384,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e4b3396569cf12d42a38193012c1b3c1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.645
+  m_Volume: 0.434
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -868,8 +868,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Score: '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1aeda59908feed94a9393bb19d81cd47, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 1aeda59908feed94a9393bb19d81cd47, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -888,7 +888,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 97690656
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -1520,8 +1520,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Waves survived:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1aeda59908feed94a9393bb19d81cd47, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 1aeda59908feed94a9393bb19d81cd47, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1540,12 +1540,12 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 97690656
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 59.25
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2486,12 +2486,12 @@ MonoBehaviour:
   dashTimer: 0
   projectileToAvoid:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   cursorDistance: 1
   maxCursorDistance: 11.24
   screenPercentage: 0.4
   newCameraTarget: {x: 0, y: 0, z: 0}
-  cameraSpeed: 5
+  cameraSpeed: 3
   main_Camera: {fileID: 8257892886956496893}
   cameraWidth: 0
   cameraHeight: 0
@@ -2606,7 +2606,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
   bangSound: {fileID: 1053395599}
   bangClip: {fileID: 8300000, guid: a9baf7d98d2d36d44858f307b70121bb, type: 3}
   bullet: {fileID: 6017484412182822554, guid: f3edfe317cf0bcf43a1d761130280eca, type: 3}

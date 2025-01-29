@@ -91,9 +91,6 @@ public class PlayerMovement : MonoBehaviour
         Vector3 offset = new Vector3(x, y, 0f) *  offsetMultiplier;
         offset.z = -1f;
 
-
-        main_Camera.transform.position = newCameraTarget; // Snap to the target if too far
-
         // Set new target to offset
         newCameraTarget = playerTransform  + offset;
 
