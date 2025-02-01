@@ -868,8 +868,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Score: '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1aeda59908feed94a9393bb19d81cd47, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 1aeda59908feed94a9393bb19d81cd47, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 80281683755ccc04eb2aa991489d19ff, type: 2}
+  m_sharedMaterial: {fileID: 1851552159337390127, guid: 80281683755ccc04eb2aa991489d19ff, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -959,8 +959,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -77, y: 26}
-  m_SizeDelta: {x: 602.5378, y: 167.4249}
+  m_AnchoredPosition: {x: -68.62692, y: 26}
+  m_SizeDelta: {x: 686.27, y: 167.4249}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &994731196
 MonoBehaviour:
@@ -1520,8 +1520,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Waves survived:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1aeda59908feed94a9393bb19d81cd47, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 1aeda59908feed94a9393bb19d81cd47, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 80281683755ccc04eb2aa991489d19ff, type: 2}
+  m_sharedMaterial: {fileID: 1851552159337390127, guid: 80281683755ccc04eb2aa991489d19ff, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1611,8 +1611,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -88, y: 104}
-  m_SizeDelta: {x: 602.5378, y: 167.4249}
+  m_AnchoredPosition: {x: -68.62692, y: 74.399994}
+  m_SizeDelta: {x: 686.27, y: 167.4249}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1385250972
 GameObject:
@@ -1709,7 +1709,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: YOU DIED!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 80281683755ccc04eb2aa991489d19ff, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1773,7 +1773,7 @@ MonoBehaviour:
   m_margin: {x: -5.213623, y: 0, z: 0, w: 309.67896}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1452944361
