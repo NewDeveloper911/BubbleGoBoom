@@ -11,13 +11,6 @@ public class ProceduralGeneration : MonoBehaviour
     [Range(15, 100)] [SerializeField] int maxRooms;
     [SerializeField] int currentRoomCount; //Bruh, nearly forgot to track the number of rooms currently generating
 
-    //Should probably have a function on the room triggers which should call a function to position the room
-
-    void Start()
-    {
-        
-    }
-
     //int roomOrder should be in range 0-3
     /*
         with 0 with up entry,
@@ -25,6 +18,9 @@ public class ProceduralGeneration : MonoBehaviour
         2 - down entry
         3 - left entry
      */
+
+    //Almost works perfectly, but now, need to investigate if the size and position of the bounding boxes will always match the room prefabs once loaded into the game
+        //That, and also work on optimisation of this function, as it causes my potato of a laptop to crash frequently.
     public void GenerateNextRoom(int roomOrder, Vector3 doorPosition)
     {
         if (currentRoomCount >= maxRooms) return;
@@ -32,7 +28,7 @@ public class ProceduralGeneration : MonoBehaviour
         bool haveValidRoom = false;
         GameObject selectedRoom = null;
         Vector3 spawnPosition = doorPosition;
-        float roomSize = 10f; // Size of your rooms (adjust based on your prefabs)
+        //Room size shouldn't be so hard-coded, but we should measure the size of the room to be piced later on in the script.
 
         while (!haveValidRoom)
         {
@@ -59,13 +55,21 @@ public class ProceduralGeneration : MonoBehaviour
             {
                 selectedRoom = roomPrefab;
                 // Calculate new room position
+                //Should check if the selected room is that corner one. Needs to be lowered a bit first before used to connect the rooms
+                int roomSize = (int)selectedRoom.gameObject.transform.GetComponent<Renderer>().bounds.size.x / 2;
+                int yOffset = selectedRoom.gameObject.name == "L Room Variant" ? roomSize : 0;
+                //Don't forget to disable the corresponding trigger so that returning back doesn't spawn a different one
+                string triggerToDisable = "Wall" + (3 - roomOrder).ToString();
+                GameObject.Find(triggerToDisable).GetComponent<Collider2D>().enabled = false;
                 switch (roomOrder)
                 {
+
                     case 0: spawnPosition += new Vector3(0, roomSize, 0); break;
-                    case 1: spawnPosition += new Vector3(roomSize, 0, 0); break;
+                    case 1: spawnPosition += new Vector3(roomSize, yOffset, 0); break;
                     case 2: spawnPosition += new Vector3(0, -roomSize, 0); break;
-                    case 3: spawnPosition += new Vector3(-roomSize, 0, 0); break;
+                    case 3: spawnPosition += new Vector3(-roomSize, yOffset, 0); break;
                 }
+
             }
         }
 

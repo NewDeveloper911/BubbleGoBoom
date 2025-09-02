@@ -15,7 +15,7 @@ public class DoorTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             generator.GenerateNextRoom(doorDirection, transform.position);
-            Destroy(gameObject); // Remove trigger so it doesn't spawn again
+            gameObject.GetComponent<Collider2D>().enabled  = false; // Remove trigger so it doesn't spawn again
         }
     }
 }
