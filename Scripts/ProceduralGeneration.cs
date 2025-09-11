@@ -79,13 +79,17 @@ public class ProceduralGeneration : MonoBehaviour
             currentRoomCount++;
 
             // Disable the door trigger that connects back to the current room
-            string doorToDisable = "Wall" + (3-roomOrder).ToString(); // Assuming doors are named Door0, Door1, etc.
+            string doorToDisable = "Wall" + ((roomOrder+2) % 4).ToString();
             Transform doorTransform = newRoomInstance.transform.Find(doorToDisable);
             if (doorTransform != null)
             {
                 Collider2D doorCollider = doorTransform.GetComponent<Collider2D>();
                 if (doorCollider != null)
+                {
                     doorCollider.enabled = false;
+                    Debug.Log("Deleting that pesky double-door to prevent the backtrack");
+                }
+                    
             }
         }
     }

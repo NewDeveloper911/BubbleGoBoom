@@ -16,9 +16,9 @@ public class DoorTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player") && Time.time > lastTriggerTime + cooldownDuration)
         {
-            generator.GenerateNextRoom(doorDirection, transform.position);
-            gameObject.GetComponent<Collider2D>().enabled = false;
             lastTriggerTime = Time.time;
+            generator.GenerateNextRoom(doorDirection, transform.position);
+            gameObject.GetComponent<Collider2D>().enabled = false;       
         }
     }
 }
