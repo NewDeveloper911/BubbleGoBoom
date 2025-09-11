@@ -8,8 +8,8 @@ public class ProceduralGeneration : MonoBehaviour
     [SerializeField] GameObject[] roomPrefabs; //This is the array we want to store the rooms which can be instantiated
     //These variables dictate the minimum and maximum number of rooms generated
     [Range(1,15)] [SerializeField] int minRooms;
-    [Range(15, 100)] [SerializeField] int maxRooms;
-    [SerializeField] int currentRoomCount; //Bruh, nearly forgot to track the number of rooms currently generating
+    [Range(15, 100)] [SerializeField] int maxRooms = 15;
+    [SerializeField] int currentRoomCount = 0; //Bruh, nearly forgot to track the number of rooms currently generating
 
     //int roomOrder should be in range 0-3
     /*
@@ -18,66 +18,75 @@ public class ProceduralGeneration : MonoBehaviour
         2 - down entry
         3 - left entry
      */
-
-    //Almost works perfectly, but now, need to investigate if the size and position of the bounding boxes will always match the room prefabs once loaded into the game
-        //That, and also work on optimisation of this function, as it causes my potato of a laptop to crash frequently.
     public void GenerateNextRoom(int roomOrder, Vector3 doorPosition)
     {
         if (currentRoomCount >= maxRooms) return;
 
-        bool haveValidRoom = false;
-        GameObject selectedRoom = null;
-        Vector3 spawnPosition = doorPosition;
-        //Room size shouldn't be so hard-coded, but we should measure the size of the room to be piced later on in the script.
-
-        while (!haveValidRoom)
+        // First, find all rooms that match the door requirement
+            //Time complexity = O(n) where n is the number of possible rooms
+        List<GameObject> validRooms = new List<GameObject>();
+        foreach (GameObject roomPrefab in roomPrefabs)
         {
-            int randomIndex = UnityEngine.Random.Range(0, roomPrefabs.Length);
-            GameObject roomPrefab = roomPrefabs[randomIndex];
             RoomData roomData = roomPrefab.GetComponent<RoomData>();
-
-            if (roomData == null)
-            {
-                Debug.LogWarning("Room prefab missing RoomData component!");
-                continue;
-            }
-
-            // Check if the room has a door matching the player's entry
+            if (roomData == null) continue;
+            
+            bool isValid = false;
             switch (roomOrder)
             {
-                case 0: if (roomData.hasSouthDoor) haveValidRoom = true; break; // Coming from below
-                case 1: if (roomData.hasWestDoor) haveValidRoom = true; break;  // Coming from left
-                case 2: if (roomData.hasNorthDoor) haveValidRoom = true; break; // Coming from above
-                case 3: if (roomData.hasEastDoor) haveValidRoom = true; break;  // Coming from right
+                case 0: isValid = roomData.hasSouthDoor; break;
+                case 1: isValid = roomData.hasWestDoor; break;
+                case 2: isValid = roomData.hasNorthDoor; break;
+                case 3: isValid = roomData.hasEastDoor; break;
             }
-
-            if (haveValidRoom)
-            {
-                selectedRoom = roomPrefab;
-                // Calculate new room position
-                //Should check if the selected room is that corner one. Needs to be lowered a bit first before used to connect the rooms
-                int roomSize = (int)selectedRoom.gameObject.transform.GetComponent<Renderer>().bounds.size.x / 2;
-                int yOffset = selectedRoom.gameObject.name == "L Room Variant" ? roomSize : 0;
-                //Don't forget to disable the corresponding trigger so that returning back doesn't spawn a different one
-                string triggerToDisable = "Wall" + (3 - roomOrder).ToString();
-                GameObject.Find(triggerToDisable).GetComponent<Collider2D>().enabled = false;
-                switch (roomOrder)
-                {
-
-                    case 0: spawnPosition += new Vector3(0, roomSize, 0); break;
-                    case 1: spawnPosition += new Vector3(roomSize, yOffset, 0); break;
-                    case 2: spawnPosition += new Vector3(0, -roomSize, 0); break;
-                    case 3: spawnPosition += new Vector3(-roomSize, yOffset, 0); break;
-                }
-
-            }
+            
+            if (isValid) validRooms.Add(roomPrefab);
         }
+        
+        if (validRooms.Count == 0)
+        {
+            Debug.LogError($"No valid rooms found for roomOrder {roomOrder}!");
+            return;
+        }
+        
+        // Pick a random valid room
+        GameObject selectedRoom = validRooms[UnityEngine.Random.Range(0, validRooms.Count)];
 
         if (selectedRoom != null)
         {
-            Instantiate(selectedRoom, spawnPosition, Quaternion.identity);
+            // INSTANTIATE FIRST with basic position - we'll calculate exact position after
+            GameObject newRoomInstance = Instantiate(selectedRoom, doorPosition, Quaternion.identity);
+            
+            // NOW get size and name from the instantiated copy, not the prefab
+            int roomSize = (int)newRoomInstance.transform.GetComponent<Renderer>().bounds.size.x / 2;
+            int yOffset = newRoomInstance.name.Contains("L Room Variant") ? roomSize/2 : 0;
+            
+            // Calculate the correct position
+            Vector3 spawnPosition = doorPosition;
+            switch (roomOrder)
+            {
+                case 0: spawnPosition += new Vector3(0, roomSize, -yOffset);
+                    break;
+                case 1: spawnPosition += new Vector3(roomSize, -yOffset, 0);
+                    break;
+                case 2: spawnPosition += new Vector3(0, -roomSize, -yOffset);
+                    break;
+                case 3: spawnPosition += new Vector3(-roomSize, -yOffset, 0);
+                    break;
+            }
+            
+            // Move the instantiated room to the correct position
+            newRoomInstance.transform.position = spawnPosition;
             currentRoomCount++;
+
+            // Disable the door trigger that connects back to the current room
+            string doorToDisable = "Wall" + (3-roomOrder).ToString(); // Assuming doors are named Door0, Door1, etc.
+            Transform doorTransform = newRoomInstance.transform.Find(doorToDisable);
+            if (doorTransform != null)
+            {
+                Collider2D doorCollider = doorTransform.GetComponent<Collider2D>();
+                if (doorCollider != null)
+                    doorCollider.enabled = false;
+            }
         }
     }
-
 }
