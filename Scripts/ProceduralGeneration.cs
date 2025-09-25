@@ -54,7 +54,8 @@ public class ProceduralGeneration : MonoBehaviour
         if (selectedRoom != null)
         {
             // INSTANTIATE FIRST with basic position - we'll calculate exact position after
-            GameObject newRoomInstance = Instantiate(selectedRoom, doorPosition, Quaternion.identity);
+                //I've intentionally removed the Quaternion.identity rotation here as some of my room prefabs are just rotated versions of existing sprites
+            GameObject newRoomInstance = Instantiate(selectedRoom, doorPosition, selectedRoom.transform.rotation);
             
             // NOW get size and name from the instantiated copy, not the prefab
             int roomSize = (int)newRoomInstance.transform.GetComponent<Renderer>().bounds.size.x / 2;
@@ -70,7 +71,7 @@ public class ProceduralGeneration : MonoBehaviour
                     break;
                 case 2: spawnPosition += new Vector3(0, -roomSize, -yOffset);
                     break;
-                case 3: spawnPosition += new Vector3(-roomSize, -yOffset, 0);
+                case 3: spawnPosition += new Vector3(-roomSize, yOffset, 0);
                     break;
             }
             

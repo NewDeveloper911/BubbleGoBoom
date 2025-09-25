@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
         */
         anim = GetComponent<Animator>();
 
-        main_Camera = FindObjectOfType<Camera>();
+        main_Camera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
         main_Camera.transform.LookAt(rb.gameObject.transform);
         //For orthographic cameras if calculating manually  
         cameraHeight = Camera.main.orthographicSize * 2f;  // Total height of the camera's view
