@@ -39,8 +39,7 @@ public class Bullet : MonoBehaviour
 
         if(victim.CompareTag("Player") && !damagesEnemies) {
             Destroy(gameObject);
-            PlayerHealthManager healthScript = victim.GetComponent<PlayerHealthManager>();
-            healthScript.Damage(bulletDamage);
+            health.DamagePlayer(bulletDamage);
         }
     }
 

@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class HealthBuff : MonoBehaviour
 {
-    [SerializeField] PlayerHealthManager healthManager;
+    [SerializeField] HealthManager healthManager;
     [SerializeField] int healAmount = 10;
 
     void OnTriggerEnter2D(Collider2D other){
         if (other.CompareTag("Player")){
             Debug.Log("Should be trying to heal now");
-            healthManager = FindObjectOfType<PlayerHealthManager>();
-            healthManager.Heal(healAmount);
+            healthManager = FindObjectOfType<HealthManager>().GetComponent<HealthManager>();
+            healthManager.HealPlayer(healAmount);
             Destroy(gameObject);
         }
     }

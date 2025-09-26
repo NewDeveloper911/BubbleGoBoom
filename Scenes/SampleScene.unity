@@ -212,7 +212,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 994731196}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerHealthManager, Assembly-CSharp
         m_MethodName: SetHealth
         m_Mode: 1
@@ -878,25 +878,6 @@ RectTransform:
   m_AnchoredPosition: {x: -184.99997, y: 26}
   m_SizeDelta: {x: 686.27, y: 167.4249}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &994731196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2517106913691671055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e40beb50d37d0d34d99fcd3cba1e2db8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 100
-  lowHealthUI: {fileID: 148048042}
-  gameOverUI: {fileID: 811583181}
-  healthBar: {fileID: 148048044}
-  damageColor: {r: 1, g: 0, b: 0, a: 1}
-  noDamageColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!95 &994731197
 Animator:
   serializedVersion: 5
@@ -2146,7 +2127,6 @@ GameObject:
   - component: {fileID: 6135107291877414849}
   - component: {fileID: 3601301787312122025}
   - component: {fileID: 2419507286829720615}
-  - component: {fileID: 994731196}
   - component: {fileID: 994731197}
   m_Layer: 0
   m_Name: Player
@@ -2285,6 +2265,7 @@ MonoBehaviour:
   songs:
   - {fileID: 8300000, guid: e4b3396569cf12d42a38193012c1b3c1, type: 3}
   - {fileID: 8300000, guid: d46de2f4306ffc54caf5ba21b445a6d6, type: 3}
+  health: {fileID: 5019638680970349312}
   player: {fileID: 3102552823526276606}
   minDist: 10
   maxDist: 20
@@ -2332,6 +2313,7 @@ GameObject:
   - component: {fileID: 2257189633284569728}
   - component: {fileID: 4202301525149989791}
   - component: {fileID: 5019638680970349311}
+  - component: {fileID: 5019638680970349312}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -2352,6 +2334,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 0
+--- !u!114 &5019638680970349312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5019638680970349310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ba1d06232390c343b60358bc9b1c467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: 0
+  maxPlayerHealth: 100
+  amIDead: 0
+  game: {fileID: 4202301525149989791}
+  lowHealthUI: {fileID: 148048042}
+  gameOverUI: {fileID: 811583181}
+  healthBar: {fileID: 148048044}
+  damageColor: {r: 1, g: 0, b: 0, a: 1}
+  noDamageColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &5251293572828322182
 GameObject:
   m_ObjectHideFlags: 0

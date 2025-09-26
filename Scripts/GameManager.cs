@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     [Header("Managed scripts")]
     [SerializeField] AudioManager audioManager;
     [SerializeField] AudioClip[] songs;
+    [SerializeField] HealthManager health;
 
 
 
@@ -39,7 +40,6 @@ public class GameManager : MonoBehaviour
 
     [Header("General UI")]
     [SerializeField] TMP_Text scoreText, wavesSurived;
-    [SerializeField] GameObject gameoverUI;
 
     public int waves = 0;
 
@@ -47,8 +47,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         audioManager = FindObjectOfType<AudioManager>();
-        gameoverUI.SetActive(false);
-        
+        health = GetComponent<HealthManager>();
 
         waves = 0;
         StartCoroutine(SpawnWave());
@@ -144,19 +143,13 @@ public class GameManager : MonoBehaviour
 
     public void EndGame(){
         // Debug.Log("You lost the game bro, fr");
-        gameoverUI.SetActive(true);
         scoreText.text = "Final score: " + gameScore.ToString();
         Invoke("ResetGame", 5f); //reset the game after 5 second if there isn't any user input, i guess
     }
 
     public void ResetGame(){
-        gameoverUI.SetActive(false);
-        //Should reset the health as well
-        var healthMan = FindObjectOfType<PlayerHealthManager>();
-        healthMan.Heal(500);
-        healthMan.SetHealth();
-        
         gameScore = 0;
+        health.ResetGame(); //Resetting the health variables
         //Destroying all livin enemies
         var enemies = FindObjectsByType<EnemyHealth>(FindObjectsSortMode.None);
         foreach(var enemy in enemies){
@@ -165,7 +158,7 @@ public class GameManager : MonoBehaviour
         StopAllCoroutines();
         waves = 0;
         StartGoCoroutine();
-
+        
     }
 
     public void ChangeScore(int amount){

@@ -38,10 +38,10 @@ public class Enemy2 : MonoBehaviour
         if (victim.gameObject.CompareTag("Player") && canDamage)
         {
             Debug.Log("Damaging player...");
-            PlayerHealthManager playerHealth = victim.gameObject.GetComponent<PlayerHealthManager>();
+            HealthManager playerHealth = FindObjectOfType<HealthManager>().GetComponent<HealthManager>();
             if (playerHealth != null)
             {
-                playerHealth.Damage(collisionDamage);
+                playerHealth.DamagePlayer(collisionDamage);
                 StartCoroutine(DamageCooldown());
             }
         }

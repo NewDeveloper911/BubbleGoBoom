@@ -59,17 +59,18 @@ public class ProceduralGeneration : MonoBehaviour
             
             // NOW get size and name from the instantiated copy, not the prefab
             int roomSize = (int)newRoomInstance.transform.GetComponent<Renderer>().bounds.size.x / 2;
+            int roomHeight = (int)newRoomInstance.transform.GetComponent<Renderer>().bounds.size.y / 2;
             int yOffset = newRoomInstance.name.Contains("L Room Variant") ? roomSize/2 : 0;
             
             // Calculate the correct position
             Vector3 spawnPosition = doorPosition;
             switch (roomOrder)
             {
-                case 0: spawnPosition += new Vector3(0, roomSize, -yOffset);
+                case 0: spawnPosition += new Vector3(0, roomHeight, 0);
                     break;
                 case 1: spawnPosition += new Vector3(roomSize, -yOffset, 0);
                     break;
-                case 2: spawnPosition += new Vector3(0, -roomSize, -yOffset);
+                case 2: spawnPosition += new Vector3(0, -roomHeight, 0);
                     break;
                 case 3: spawnPosition += new Vector3(-roomSize, yOffset, 0);
                     break;
