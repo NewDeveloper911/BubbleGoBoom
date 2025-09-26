@@ -1495,7 +1495,7 @@ GameObject:
   - component: {fileID: 1452944361}
   - component: {fileID: 1452944360}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Game Over
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2277,7 +2277,6 @@ MonoBehaviour:
   KingOlay: {fileID: 3476647635555288741, guid: 2631440485b29994183435b5dc958d54, type: 3}
   scoreText: {fileID: 811583182}
   wavesSurived: {fileID: 1374308225}
-  gameoverUI: {fileID: 1452944358}
   waves: 0
 --- !u!4 &4727704236970251344
 Transform:
@@ -2350,8 +2349,7 @@ MonoBehaviour:
   maxPlayerHealth: 100
   amIDead: 0
   game: {fileID: 4202301525149989791}
-  lowHealthUI: {fileID: 148048042}
-  gameOverUI: {fileID: 811583181}
+  gameOverUI: {fileID: 1452944358}
   healthBar: {fileID: 148048044}
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   noDamageColor: {r: 1, g: 1, b: 1, a: 1}
