@@ -59,7 +59,7 @@ Material:
     - _StencilWriteMask: 255
     - _Width: 2.8
     m_Colors:
-    - _Color: {r: 0.12452829, g: 0.12452829, b: 0.12452829, a: 1}
+    - _Color: {r: 0.690566, g: 0.690566, b: 0.690566, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
